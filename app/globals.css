@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-atkinson);
+  --font-lastik: var(--font-lastik);
+  --font-display: var(--font-lastik);
+}
+
+body {
+    background-color: rgb(254, 245, 255);
+}
