@@ -3,6 +3,8 @@ import { Atkinson_Hyperlegible, Instrument_Serif } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
+import Header from "@/components/Header";
+
 const atkinson = Atkinson_Hyperlegible({
     subsets: ["latin"],
     variable: "--font-atkinson",
@@ -36,6 +38,7 @@ export default function RootLayout({
             <body
                 className={`${atkinson.className} ${lastik.variable} ${instrumentSerif.variable}  font-sans antialiased m-0 p-0`}
             >
+                <Header />
                 {children}
             </body>
         </html>

@@ -1,0 +1,302 @@
+[
+    {
+        "name": "AR",
+        "subcategories": [
+            {
+                "name": "Tools",
+                "items": [
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "TikTok Effect House",
+                        "description": "A platform for creating AR effects for TikTok videos.",
+                        "links": [
+                            { "title": "Website", "url": "https://effecthouse.tiktok.com" },
+                            { "title": "Documentation", "url": "https://effecthouse.tiktok.com/docs" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Lens Studio",
+                        "description": "Snapchat's tool for building AR lenses and filters.",
+                        "links": [
+                            { "title": "Website", "url": "https://lensstudio.snapchat.com" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "8th Wall",
+                        "description": "Web-based AR platform for creating immersive experiences.",
+                        "links": [
+                            { "title": "Website", "url": "https://www.8thwall.com" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Blippar",
+                        "description": "AR app for interactive content on images and objects.",
+                        "links": [
+                            { "title": "Website", "url": "https://www.blippar.com" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Resources",
+                "items": [
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "ARCore Documentation",
+                        "description": "Official Google ARCore guides and tutorials.",
+                        "links": [
+                            { "title": "Documentation", "url": "https://developers.google.com/ar" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "ARKit Resources",
+                        "description": "Apple's ARKit developer resources and samples.",
+                        "links": [
+                            { "title": "Resources", "url": "https://developer.apple.com/arkit" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Generative AI",
+        "subcategories": [
+            {
+                "name": "Tools",
+                "items": [
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Weavy AI",
+                        "description": "AI-powered platform for generating creative content.",
+                        "links": [
+                            { "title": "Website", "url": "https://www.weavy.ai" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Google Flow",
+                        "description": "Generative AI tool for creating images and text.",
+                        "links": [
+                            { "title": "Website", "url": "https://flow.google.com" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Adobe Firefly",
+                        "description": "Adobe's generative AI for design and creativity.",
+                        "links": [
+                            { "title": "Website", "url": "https://www.adobe.com/products/firefly.html" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Midjourney",
+                        "description": "AI image generation tool via Discord.",
+                        "links": [
+                            { "title": "Website", "url": "https://www.midjourney.com" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Resources",
+                "items": [
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "OpenAI API Docs",
+                        "description": "Documentation for GPT models and generative AI.",
+                        "links": [
+                            { "title": "API Docs", "url": "https://platform.openai.com/docs" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Stable Diffusion Guide",
+                        "description": "Tutorials for open-source image generation.",
+                        "links": [
+                            { "title": "Guide", "url": "https://stability.ai" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "AI coding",
+        "subcategories": [
+            {
+                "name": "Tools",
+                "items": [
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Loveable",
+                        "description": "AI-assisted coding tool for faster development.",
+                        "links": [
+                            { "title": "Website", "url": "https://www.loveable.dev" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "VSCode with GitHub Copilot",
+                        "description": "Code editor enhanced with AI code suggestions.",
+                        "links": [
+                            { "title": "VS Code", "url": "https://code.visualstudio.com" },
+                            { "title": "GitHub Copilot", "url": "https://github.com/features/copilot" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Tabnine",
+                        "description": "AI code completion plugin for various IDEs.",
+                        "links": [
+                            { "title": "Website", "url": "https://www.tabnine.com" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Resources",
+                "items": [
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "AI Coding Tutorials",
+                        "description": "Free resources for learning AI-assisted programming.",
+                        "links": [
+                            { "title": "Tutorials", "url": "https://www.codecademy.com/learn/artificial-intelligence" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Web libraries",
+        "subcategories": [
+            {
+                "name": "Tools",
+                "items": [
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "React",
+                        "description": "JavaScript library for building user interfaces.",
+                        "links": [
+                            { "title": "Website", "url": "https://reactjs.org" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Three.js",
+                        "description": "JavaScript library for 3D graphics on the web.",
+                        "links": [
+                            { "title": "Website", "url": "https://threejs.org" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "D3.js",
+                        "description": "Library for data visualization in web browsers.",
+                        "links": [
+                            { "title": "Website", "url": "https://d3js.org" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Resources",
+                "items": [
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "MDN Web Docs",
+                        "description": "Comprehensive web development documentation.",
+                        "links": [
+                            { "title": "Docs", "url": "https://developer.mozilla.org" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Design",
+        "subcategories": [
+            {
+                "name": "Tools",
+                "items": [
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Figma",
+                        "description": "Collaborative interface design tool.",
+                        "links": [
+                            { "title": "Website", "url": "https://www.figma.com" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Adobe Illustrator",
+                        "description": "Vector graphics editor for illustrations.",
+                        "links": [
+                            { "title": "Website", "url": "https://www.adobe.com/products/illustrator.html" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Resources",
+                "items": [
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Dribbble",
+                        "description": "Community for designers to share work.",
+                        "links": [
+                            { "title": "Community", "url": "https://dribbble.com" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "3D printing",
+        "subcategories": [
+            {
+                "name": "Tools",
+                "items": [
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Blender",
+                        "description": "Free 3D creation suite for modeling and printing.",
+                        "links": [
+                            { "title": "Website", "url": "https://www.blender.org" }
+                        ]
+                    },
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Tinkercad",
+                        "description": "Simple 3D design tool for beginners.",
+                        "links": [
+                            { "title": "Website", "url": "https://www.tinkercad.com" }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Resources",
+                "items": [
+                    {
+                        "image": "https://via.placeholder.com/150",
+                        "name": "Thingiverse",
+                        "description": "Community for sharing 3D printable designs.",
+                        "links": [
+                            { "title": "Community", "url": "https://www.thingiverse.com" }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

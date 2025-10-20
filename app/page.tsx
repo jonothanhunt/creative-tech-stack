@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
-import Header from "@/components/Header";
+import Nav from "@/components/Nav";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -46,20 +46,22 @@ export default function Home() {
 
     return (
         <div className="">
-            <Header />
+            <div className="sticky top-0 mix-blend-color-dodge">
+                <Nav />
+            </div>
             <main className="w-full">
-                <div className="">
+                <div className="mix-blend-color-dodge">
                     {posts.map((post) => (
                         <Link
                             key={post.slug}
-                            href={`/blog/${post.slug}`}
+                            href={`/newsletter/${post.slug}`}
                             className="group"
                         >
-                            <article className="flex flex-col sm:flex-row sm:gap-6 justify-between text-4xl sm:text-5xl md:text-6xl border-y-2 py-2 transition-[padding,background-color] duration-1000 group-hover:duration-100 group-hover:px-4 group-hover:bg-ct-primary border-y-ct-primary divide-ct-primary divide">
-                                <h3 className="w-fit font-instrument uppercase group-hover:text-ct-secondary transition-colors">
+                            <article className=" hover:bg-ct-primary flex flex-col sm:flex-row sm:gap-6 justify-between text-4xl sm:text-5xl md:text-6xl border-y-2 py-2 transition-[padding,background-color] duration-1000 group-hover:duration-100 border-y-ct-primary divide-ct-primary divide">
+                                <h3 className="w-fit font-instrument uppercase transition-colors text-ct-primary group-hover:text-ct-secondary">
                                     {post.title}
                                 </h3>
-                                <time className="font-instrument uppercase transition-colors text-ct-primary/80 group-hover:text-ct-secondary/80">
+                                <time className="font-instrument uppercase transition-colors text-ct-primary group-hover:text-ct-secondary">
                                     {formatDate(post.date)}
                                 </time>
                                 {/* <div className="flex-1 flex-col justify-between">
