@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Atkinson_Hyperlegible } from "next/font/google";
+import { Atkinson_Hyperlegible, Instrument_Serif } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -9,6 +9,11 @@ const atkinson = Atkinson_Hyperlegible({
     weight: ["400", "700"],
 });
 
+const instrumentSerif = Instrument_Serif({
+    subsets: ["latin"],
+    variable: "--font-instrument-serif",
+    weight: ["400"],
+});
 const lastik = localFont({
     variable: "--font-lastik",
     src: "./fonts/LastikVariable-Variable.woff2",
@@ -27,9 +32,9 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
+        <html lang="en" className="m-0 p-0">
             <body
-                className={`${atkinson.className} ${lastik.variable} font-sans antialiased`}
+                className={`${atkinson.className} ${lastik.variable} ${instrumentSerif.variable}  font-sans antialiased m-0 p-0`}
             >
                 {children}
             </body>

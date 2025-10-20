@@ -2,8 +2,24 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
+import Header from "@/components/Header";
 
 const postsDirectory = path.join(process.cwd(), "posts");
+
+function formatDate(dateString: string): string {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const postDate = new Date(dateString + "T00:00:00");
+    const diffDays = Math.floor(
+        (today.getTime() - postDate.getTime()) / (1000 * 60 * 60 * 24)
+    );
+
+    if (diffDays === 0) return "TODAY";
+    if (diffDays === 1) return "1 DAY AGO";
+    if (diffDays <= 6) return `${diffDays} DAYS AGO`;
+    if (diffDays <= 13) return "LAST WEEK";
+    return dateString;
+}
 
 function getPosts() {
     const fileNames = fs.readdirSync(postsDirectory);
@@ -29,50 +45,35 @@ export default function Home() {
     const posts = getPosts();
 
     return (
-        <div className="min-h-screen">
-            <header className=" shadow-sm">
-                <div className="max-w-7xl">
-                    <h1 className="font-lastik text-[min(20vw,10rem)] leading-[min(20vw,10rem)] font-[50] text-brown-900">
-                        Creative
-                        <br />
-                        Tech
-                        <br />
-                        Newsletter
-                    </h1>
-                    {/* <p className="mt-2 text-lg text-gray-600">
-                        Exploring the intersection of creativity and technology
-                    </p> */}
-                </div>
-            </header>
-
-            <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-6">
-                    Latest Posts
-                </h2>
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="">
+            <Header />
+            <main className="w-full">
+                <div className="">
                     {posts.map((post) => (
-                        <article
+                        <Link
                             key={post.slug}
-                            className="bg-white rounded-lg shadow-md p-6"
+                            href={`/blog/${post.slug}`}
+                            className="group"
                         >
-                            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                                <Link
-                                    href={`/blog/${post.slug}`}
-                                    className="hover:text-blue-600"
-                                >
+                            <article className="flex flex-col sm:flex-row sm:gap-6 justify-between text-4xl sm:text-5xl md:text-6xl border-y-2 py-2 transition-[padding,background-color] duration-1000 group-hover:duration-100 group-hover:px-4 group-hover:bg-ct-primary border-y-ct-primary divide-ct-primary divide">
+                                <h3 className="w-fit font-instrument uppercase group-hover:text-ct-secondary transition-colors">
                                     {post.title}
-                                </Link>
-                            </h3>
-                            <p className="text-gray-600 mb-4">
-                                {post.description}
-                            </p>
-                            <time className="text-sm text-gray-500">
-                                {post.date}
-                            </time>
-                        </article>
+                                </h3>
+                                <time className="font-instrument uppercase transition-colors text-ct-primary/80 group-hover:text-ct-secondary/80">
+                                    {formatDate(post.date)}
+                                </time>
+                                {/* <div className="flex-1 flex-col justify-between">
+                                <p className="">{post.description}</p>
+                            </div> */}
+                            </article>
+                        </Link>
                     ))}
                 </div>
             </main>
+            <footer className="py-4 text-center text-sm text-ct-primary">
+                Written by{" "}
+                <Link href="https://jonothan.dev">Jonothan Hunt</Link>
+            </footer>
         </div>
     );
 }

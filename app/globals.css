@@ -1,11 +1,28 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: var(--font-atkinson);
-  --font-lastik: var(--font-lastik);
-  --font-display: var(--font-lastik);
+    --font-sans: var(--font-atkinson);
+    --font-lastik: var(--font-lastik);
+    --font-instrument: var(--font-instrument-serif);
+    --font-display: var(--font-lastik);
+
+    --color-ct-primary: rgb(255, 249, 229);
+    --color-ct-secondary: rgb(16, 0, 55);
+
+    /* --color-ct-primary: rgb(16, 0, 55);
+  --color-ct-secondary: rgb(255, 249, 229); */
 }
 
 body {
-    background-color: rgb(254, 245, 255);
+    /* background-color: var(--color-ct-secondary); */
+    /* background: #833ab4; */
+    background: linear-gradient(
+        40deg,
+        rgba(131, 58, 180, 1) 0%,
+        rgb(169, 20, 20) 50%,
+        rgb(176, 117, 36) 100%
+    );
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    color: var(--color-ct-primary);
 }
