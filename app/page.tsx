@@ -57,7 +57,7 @@ export default function Home() {
                             href={`/newsletter/${post.slug}`}
                             className="group"
                         >
-                            <article className=" hover:bg-ct-primary flex flex-col sm:flex-row sm:gap-6 justify-between text-4xl sm:text-5xl md:text-6xl border-y-2 py-2 transition-[padding,background-color] duration-1000 group-hover:duration-100 border-y-ct-primary divide-ct-primary divide">
+                            <article className=" hover:bg-ct-primary flex flex-col sm:flex-row sm:gap-6 justify-between text-3xl sm:text-4xl md:text-4xl border-b-2 py-2 transition-[padding,background-color] duration-1000 group-hover:duration-100 border-y-ct-primary divide-ct-primary divide">
                                 <h3 className="w-fit font-instrument uppercase transition-colors text-ct-primary group-hover:text-ct-secondary">
                                     {post.title}
                                 </h3>

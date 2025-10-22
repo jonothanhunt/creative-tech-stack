@@ -1,41 +1,45 @@
 [
     {
-        "name": "AR",
+        "name": "Augmented Reality (AR)",
         "subcategories": [
             {
                 "name": "Tools",
                 "items": [
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "TikTok Effect House",
-                        "description": "A platform for creating AR effects for TikTok videos.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DARCore",
+                        "name": "Google ARCore",
+                        "description": "The primary SDK for building augmented reality experiences on Android and iOS devices, featuring environmental understanding and cloud anchors.",
                         "links": [
-                            { "title": "Website", "url": "https://effecthouse.tiktok.com" },
-                            { "title": "Documentation", "url": "https://effecthouse.tiktok.com/docs" }
+                            {
+                                "title": "Developer Site",
+                                "url": "https://developers.google.com/ar"
+                            }
                         ]
                     },
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "Lens Studio",
-                        "description": "Snapchat's tool for building AR lenses and filters.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DUnity",
+                        "name": "Unity Engine",
+                        "description": "The leading real-time 3D development platform used to build complex AR/VR games and industrial applications.",
                         "links": [
-                            { "title": "Website", "url": "https://lensstudio.snapchat.com" }
+                            {
+                                "title": "Official Site",
+                                "url": "https://unity.com"
+                            },
+                            {
+                                "title": "AR Foundation",
+                                "url": "https://www.google.com/search?q=https://unity.com/features/ar"
+                            }
                         ]
                     },
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "8th Wall",
-                        "description": "Web-based AR platform for creating immersive experiences.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DProject%2BAria",
+                        "name": "Meta Project Aria",
+                        "description": "Research platform utilizing advanced sensor glasses to gather egocentric data for contextual AI and future AR devices.",
                         "links": [
-                            { "title": "Website", "url": "https://www.8thwall.com" }
-                        ]
-                    },
-                    {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "Blippar",
-                        "description": "AR app for interactive content on images and objects.",
-                        "links": [
-                            { "title": "Website", "url": "https://www.blippar.com" }
+                            {
+                                "title": "Research Page",
+                                "url": "https://www.google.com/search?q=https://www.meta.com/research/project-aria"
+                            }
                         ]
                     }
                 ]
@@ -44,19 +48,14 @@
                 "name": "Resources",
                 "items": [
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "ARCore Documentation",
-                        "description": "Official Google ARCore guides and tutorials.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DAR%2BGuides",
+                        "name": "AR Development Tutorials",
+                        "description": "A collection of guides and tutorials for getting started with AR development using various SDKs.",
                         "links": [
-                            { "title": "Documentation", "url": "https://developers.google.com/ar" }
-                        ]
-                    },
-                    {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "ARKit Resources",
-                        "description": "Apple's ARKit developer resources and samples.",
-                        "links": [
-                            { "title": "Resources", "url": "https://developer.apple.com/arkit" }
+                            {
+                                "title": "Guides",
+                                "url": "https://www.google.com/search?q=https://www.digitaltrends.com/mobile/best-ar-development-tools"
+                            }
                         ]
                     }
                 ]
@@ -70,35 +69,47 @@
                 "name": "Tools",
                 "items": [
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "Weavy AI",
-                        "description": "AI-powered platform for generating creative content.",
-                        "links": [
-                            { "title": "Website", "url": "https://www.weavy.ai" }
-                        ]
-                    },
-                    {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "Google Flow",
-                        "description": "Generative AI tool for creating images and text.",
-                        "links": [
-                            { "title": "Website", "url": "https://flow.google.com" }
-                        ]
-                    },
-                    {
-                        "image": "https://via.placeholder.com/150",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DFirefly",
                         "name": "Adobe Firefly",
-                        "description": "Adobe's generative AI for design and creativity.",
+                        "description": "Adobe's expansive generative AI suite, integrated into Creative Cloud apps for image, video, and design workflows.",
                         "links": [
-                            { "title": "Website", "url": "https://www.adobe.com/products/firefly.html" }
+                            {
+                                "title": "Website",
+                                "url": "https://www.adobe.com/products/firefly.html"
+                            }
                         ]
                     },
                     {
-                        "image": "https://via.placeholder.com/150",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DWeavy",
+                        "name": "Weavy (Creative Workflow)",
+                        "description": "A node-based platform designed for building professional, complex creative workflows powered by custom AI models.",
+                        "links": [
+                            {
+                                "title": "Website",
+                                "url": "https://www.weavy.ai"
+                            }
+                        ]
+                    },
+                    {
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DMidjourney",
                         "name": "Midjourney",
-                        "description": "AI image generation tool via Discord.",
+                        "description": "A powerful text-to-image generation service known for its highly artistic and visually striking outputs.",
                         "links": [
-                            { "title": "Website", "url": "https://www.midjourney.com" }
+                            {
+                                "title": "Website",
+                                "url": "https://www.midjourney.com"
+                            }
+                        ]
+                    },
+                    {
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DDALL-E%2B3",
+                        "name": "DALL-E 3 (via OpenAI)",
+                        "description": "OpenAI's image generation model, notable for its improved prompt adherence and integration with large language models.",
+                        "links": [
+                            {
+                                "title": "API Docs",
+                                "url": "https://platform.openai.com/docs/models/dall-e"
+                            }
                         ]
                     }
                 ]
@@ -107,19 +118,14 @@
                 "name": "Resources",
                 "items": [
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "OpenAI API Docs",
-                        "description": "Documentation for GPT models and generative AI.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DPrompt%2BEng",
+                        "name": "Prompt Engineering Guides",
+                        "description": "Guides and techniques for writing effective prompts to get desired results from generative AI models.",
                         "links": [
-                            { "title": "API Docs", "url": "https://platform.openai.com/docs" }
-                        ]
-                    },
-                    {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "Stable Diffusion Guide",
-                        "description": "Tutorials for open-source image generation.",
-                        "links": [
-                            { "title": "Guide", "url": "https://stability.ai" }
+                            {
+                                "title": "Guide",
+                                "url": "https://github.com/dair-ai/Prompt-Engineering-Guide"
+                            }
                         ]
                     }
                 ]
@@ -127,34 +133,42 @@
         ]
     },
     {
-        "name": "AI coding",
+        "name": "AI Coding",
         "subcategories": [
             {
                 "name": "Tools",
                 "items": [
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "Loveable",
-                        "description": "AI-assisted coding tool for faster development.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DCopilot",
+                        "name": "GitHub Copilot",
+                        "description": "An AI pair programmer that provides real-time code suggestions and completions across various IDEs.",
                         "links": [
-                            { "title": "Website", "url": "https://www.loveable.dev" }
+                            {
+                                "title": "Website",
+                                "url": "https://github.com/features/copilot"
+                            }
                         ]
                     },
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "VSCode with GitHub Copilot",
-                        "description": "Code editor enhanced with AI code suggestions.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DGemini%2BCode",
+                        "name": "Gemini Code Assist",
+                        "description": "Google's AI coding assistant offering context-aware support, code review, and transformation, especially for cloud development.",
                         "links": [
-                            { "title": "VS Code", "url": "https://code.visualstudio.com" },
-                            { "title": "GitHub Copilot", "url": "https://github.com/features/copilot" }
+                            {
+                                "title": "Cloud AI",
+                                "url": "https://www.google.com/search?q=https://cloud.google.com/gemini/code"
+                            }
                         ]
                     },
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "Tabnine",
-                        "description": "AI code completion plugin for various IDEs.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DContinue",
+                        "name": "Continue (Open Source)",
+                        "description": "An open-source IDE extension allowing developers to build and customize their own model-flexible AI code agents.",
                         "links": [
-                            { "title": "Website", "url": "https://www.tabnine.com" }
+                            {
+                                "title": "Website",
+                                "url": "https://continue.dev"
+                            }
                         ]
                     }
                 ]
@@ -163,11 +177,14 @@
                 "name": "Resources",
                 "items": [
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "AI Coding Tutorials",
-                        "description": "Free resources for learning AI-assisted programming.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DDev%2BAgents",
+                        "name": "Developer Agent Frameworks",
+                        "description": "Resources and libraries for building complex, multi-step AI agents for software development tasks (e.g., testing, debugging).",
                         "links": [
-                            { "title": "Tutorials", "url": "https://www.codecademy.com/learn/artificial-intelligence" }
+                            {
+                                "title": "Docs",
+                                "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API"
+                            }
                         ]
                     }
                 ]
@@ -175,33 +192,42 @@
         ]
     },
     {
-        "name": "Web libraries",
+        "name": "Web Libraries",
         "subcategories": [
             {
                 "name": "Tools",
                 "items": [
                     {
-                        "image": "https://via.placeholder.com/150",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DReact",
                         "name": "React",
-                        "description": "JavaScript library for building user interfaces.",
+                        "description": "The leading JavaScript library for building user interfaces, focusing on component-based architecture and concurrency.",
                         "links": [
-                            { "title": "Website", "url": "https://reactjs.org" }
+                            {
+                                "title": "Official Site",
+                                "url": "https://react.dev"
+                            }
                         ]
                     },
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "Three.js",
-                        "description": "JavaScript library for 3D graphics on the web.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DNext.js",
+                        "name": "Next.js",
+                        "description": "A full-stack React framework enabling server-side rendering, static generation, and high-performance routing.",
                         "links": [
-                            { "title": "Website", "url": "https://threejs.org" }
+                            {
+                                "title": "Official Site",
+                                "url": "https://nextjs.org"
+                            }
                         ]
                     },
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "D3.js",
-                        "description": "Library for data visualization in web browsers.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DSvelte",
+                        "name": "Svelte",
+                        "description": "A compiler that shifts framework work into a compile step, resulting in smaller bundles and highly performant web apps.",
                         "links": [
-                            { "title": "Website", "url": "https://d3js.org" }
+                            {
+                                "title": "Official Site",
+                                "url": "https://svelte.dev"
+                            }
                         ]
                     }
                 ]
@@ -210,11 +236,14 @@
                 "name": "Resources",
                 "items": [
                     {
-                        "image": "https://via.placeholder.com/150",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DMDN",
                         "name": "MDN Web Docs",
-                        "description": "Comprehensive web development documentation.",
+                        "description": "The most comprehensive documentation for all HTML, CSS, and JavaScript standards and APIs.",
                         "links": [
-                            { "title": "Docs", "url": "https://developer.mozilla.org" }
+                            {
+                                "title": "Documentation",
+                                "url": "https://developer.mozilla.org/en-US"
+                            }
                         ]
                     }
                 ]
@@ -222,25 +251,42 @@
         ]
     },
     {
-        "name": "Design",
+        "name": "Design & UX",
         "subcategories": [
             {
                 "name": "Tools",
                 "items": [
                     {
-                        "image": "https://via.placeholder.com/150",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DFigma",
                         "name": "Figma",
-                        "description": "Collaborative interface design tool.",
+                        "description": "The collaborative, cloud-based interface design tool used for vector editing, wireframing, and prototyping.",
                         "links": [
-                            { "title": "Website", "url": "https://www.figma.com" }
+                            {
+                                "title": "Website",
+                                "url": "https://www.figma.com"
+                            }
                         ]
                     },
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "Adobe Illustrator",
-                        "description": "Vector graphics editor for illustrations.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DVisily",
+                        "name": "Visily (AI Design)",
+                        "description": "An AI-powered design tool that converts screenshots, sketches, or text into editable digital mockups and flows.",
                         "links": [
-                            { "title": "Website", "url": "https://www.adobe.com/products/illustrator.html" }
+                            {
+                                "title": "Website",
+                                "url": "https://www.visily.ai"
+                            }
+                        ]
+                    },
+                    {
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DSketch",
+                        "name": "Sketch",
+                        "description": "A long-standing vector graphics editor, popular for UI/UX design, particularly in the macOS ecosystem.",
+                        "links": [
+                            {
+                                "title": "Website",
+                                "url": "https://www.sketch.com"
+                            }
                         ]
                     }
                 ]
@@ -249,11 +295,14 @@
                 "name": "Resources",
                 "items": [
                     {
-                        "image": "https://via.placeholder.com/150",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DDribbble",
                         "name": "Dribbble",
-                        "description": "Community for designers to share work.",
+                        "description": "A community and showcase platform for digital designers to find inspiration and share their creative work.",
                         "links": [
-                            { "title": "Community", "url": "https://dribbble.com" }
+                            {
+                                "title": "Community",
+                                "url": "https://dribbble.com"
+                            }
                         ]
                     }
                 ]
@@ -261,25 +310,42 @@
         ]
     },
     {
-        "name": "3D printing",
+        "name": "3D Printing",
         "subcategories": [
             {
                 "name": "Tools",
                 "items": [
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "Blender",
-                        "description": "Free 3D creation suite for modeling and printing.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DPrusaSlicer",
+                        "name": "PrusaSlicer",
+                        "description": "An open-source slicing software for FDM and resin 3D printers, known for its advanced features and support generation.",
                         "links": [
-                            { "title": "Website", "url": "https://www.blender.org" }
+                            {
+                                "title": "Website",
+                                "url": "https://www.prusa3d.com/prusaslicer"
+                            }
                         ]
                     },
                     {
-                        "image": "https://via.placeholder.com/150",
-                        "name": "Tinkercad",
-                        "description": "Simple 3D design tool for beginners.",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DCura",
+                        "name": "UltiMaker Cura",
+                        "description": "The most popular, widely compatible open-source 3D slicing software, known for its extensive machine profiles.",
                         "links": [
-                            { "title": "Website", "url": "https://www.tinkercad.com" }
+                            {
+                                "title": "Website",
+                                "url": "https://ultimaker.com/software/ultimaker-cura"
+                            }
+                        ]
+                    },
+                    {
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DOctoPrint",
+                        "name": "OctoPrint",
+                        "description": "A web interface for remotely controlling and monitoring 3D printers, typically running on a Raspberry Pi.",
+                        "links": [
+                            {
+                                "title": "Website",
+                                "url": "https://octoprint.org"
+                            }
                         ]
                     }
                 ]
@@ -288,11 +354,14 @@
                 "name": "Resources",
                 "items": [
                     {
-                        "image": "https://via.placeholder.com/150",
+                        "image": "https://www.google.com/search?q=https://placehold.co/150x150/505050/ffffff%3Ftext%3DThingiverse",
                         "name": "Thingiverse",
-                        "description": "Community for sharing 3D printable designs.",
+                        "description": "One of the largest repositories for users to share and download free, ready-to-print 3D models.",
                         "links": [
-                            { "title": "Community", "url": "https://www.thingiverse.com" }
+                            {
+                                "title": "Community",
+                                "url": "https://www.thingiverse.com"
+                            }
                         ]
                     }
                 ]

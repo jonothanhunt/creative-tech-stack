@@ -18,6 +18,7 @@
     "@types/mdx": "^2.0.13",
     "@types/three": "^0.180.0",
     "gray-matter": "^4.0.3",
+    "gsap": "^3.13.0",
     "motion": "^12.23.24",
     "next": "15.5.6",
     "next-mdx-remote": "^5.0.0",

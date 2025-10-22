@@ -43,10 +43,10 @@ export default async function BlogPost({
             <header className="mix-blend-color-dodge">
                 <Link
                     href="/"
-                    className="group hover:bg-ct-primary flex flex-row gap-2 justify-between text-4xl sm:text-5xl md:text-6xl py-2 transition-[padding,background-color] duration-200 group-hover:duration-100  divide-ct-primary divide"
+                    className="group hover:bg-ct-primary flex flex-row gap-2 justify-between text-3xl sm:text-3xl md:text-3xl py-2 transition-[padding,background-color] duration-200 group-hover:duration-100  divide-ct-primary divide"
                 >
                     <div className="w-fit font-instrument uppercase whitespace-nowrap transition-colors text-ct-primary/50 group-hover:text-ct-secondary">
-                        <TfiArrowLeft className="inline-block -ml-3 -mr-1 -mt-[0.7rem] h-12" />
+                        <TfiArrowLeft className="inline-block -ml-1 -mt-[0.4rem] h-6" />
                         Back
                     </div>
                     <h1 className="font-instrument uppercase transition-colors text-ct-primary/50 group-hover:text-ct-secondary">
@@ -54,7 +54,7 @@ export default async function BlogPost({
                         <span className="hidden sm:inline">Newsletter</span>
                     </h1>
                 </Link>
-                <div className="group flex flex-col sm:flex-row sm:gap-6 justify-between text-4xl sm:text-5xl md:text-6xl border-t-2 py-2  border-y-ct-primary divide-ct-primary divide">
+                <div className="group flex flex-col sm:flex-row sm:gap-6 justify-between text-3xl sm:text-3xl md:text-3xl border-t-2 py-2  border-y-ct-primary divide-ct-primary divide">
                     <h3 className="w-fit font-instrument uppercase  text-ct-primary ">
                         {data.title}
                     </h3>
