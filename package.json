@@ -41,6 +41,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.5.6",
     "tailwindcss": "^4",
+    "tsx": "^4.20.6",
     "typescript": "^5"
   },
   "packageManager": "pnpm@10.18.3+sha1.0202a20aaa3d7ba8bc29b50d95efe1a34dd95773"

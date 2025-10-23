@@ -1,4 +1,11 @@
-[
+import dotenv from 'dotenv';
+import { neon } from '@neondatabase/serverless';
+
+dotenv.config({ path: '.env.local' });
+
+const sql = neon(process.env.DATABASE_URL!);
+
+const data = [
     {
         "name": "Augmented Reality (AR)",
         "subcategories": [
@@ -368,4 +375,67 @@
             }
         ]
     }
-]
+];
+
+async function restoreData() {
+    // Clear existing data
+    await sql`DELETE FROM links`;
+    await sql`DELETE FROM item_categories`;
+    await sql`DELETE FROM item_stacks`;
+    await sql`DELETE FROM items`;
+    await sql`DELETE FROM categories`;
+    await sql`DELETE FROM stacks`;
+    await sql`DELETE FROM types`;
+
+    // Insert types
+    await sql`INSERT INTO types (name) VALUES ('Tool'), ('Resource')`;
+
+    // Insert some default stacks (though not used in this data)
+    await sql`INSERT INTO stacks (name) VALUES ('webAR'), ('native AR'), ('vector design'), ('raster design')`;
+
+    // Insert data
+    for (const category of data) {
+        const [catResult] = await sql`
+            INSERT INTO categories (name) VALUES (${category.name})
+            ON CONFLICT (name) DO NOTHING
+            RETURNING id;
+        `;
+        let catId;
+        if (catResult) {
+            catId = catResult.id;
+        } else {
+            const [existing] = await sql`SELECT id FROM categories WHERE name = ${category.name}`;
+            catId = existing.id;
+        }
+
+        for (const subcategory of category.subcategories) {
+            // Map subcategory name to type
+            const typeName = subcategory.name === 'Tools' ? 'Tool' : 'Resource';
+            const [typeResult] = await sql`SELECT id FROM types WHERE name = ${typeName}`;
+            const typeId = typeResult.id;
+
+            for (const item of subcategory.items) {
+                const [itemResult] = await sql`
+                    INSERT INTO items (name, description, image_url, type_id)
+                    VALUES (${item.name}, ${item.description}, ${item.image}, ${typeId})
+                    RETURNING id;
+                `;
+                const itemId = itemResult.id;
+
+                // Link to category
+                await sql`INSERT INTO item_categories (item_id, category_id) VALUES (${itemId}, ${catId})`;
+
+                for (const link of item.links) {
+                    await sql`
+                        INSERT INTO links (title, url, item_id)
+                        VALUES (${link.title}, ${link.url}, ${itemId});
+                    `;
+                }
+            }
+        }
+    }
+
+    console.log('Data restored successfully');
+}
+
+restoreData().catch(console.error);

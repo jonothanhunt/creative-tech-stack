@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { ItemWithId } from "@/lib/db";
+import Image from "next/image";
 import FilterMenu from "@/components/FilterMenu";
 import Nav from "@/components/Nav";
 
@@ -17,19 +18,33 @@ export default function ListsPage() {
         stacks: string[];
     }>({ categories: [], types: [], stacks: [] });
     const [loading, setLoading] = useState(true);
-    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(
+        null
+    );
     const [selectedType, setSelectedType] = useState<string | null>(null);
     const [selectedStacks, setSelectedStacks] = useState<string[]>([]);
 
     useEffect(() => {
-        fetch("/api/items").then((res) => res.json()).then((itemsData: ItemWithId[]) => {
-            setItems(itemsData);
-            const categories = Array.from(new Set(itemsData.flatMap((item: ItemWithId) => item.categories))).sort();
-            const types = Array.from(new Set(itemsData.map((item: ItemWithId) => item.type))).sort();
-            const stacks = Array.from(new Set(itemsData.flatMap((item: ItemWithId) => item.stacks))).sort();
-            setFilters({ categories, types, stacks });
-            setLoading(false);
-        });
+        fetch("/api/items")
+            .then((res) => res.json())
+            .then((itemsData: ItemWithId[]) => {
+                setItems(itemsData);
+                const categories = Array.from(
+                    new Set(
+                        itemsData.flatMap((item: ItemWithId) => item.categories)
+                    )
+                ).sort();
+                const types = Array.from(
+                    new Set(itemsData.map((item: ItemWithId) => item.type))
+                ).sort();
+                const stacks = Array.from(
+                    new Set(
+                        itemsData.flatMap((item: ItemWithId) => item.stacks)
+                    )
+                ).sort();
+                setFilters({ categories, types, stacks });
+                setLoading(false);
+            });
     }, []);
 
     useEffect(() => {
@@ -38,18 +53,31 @@ export default function ListsPage() {
         const stk = searchParams.get("stacks");
         setSelectedCategory(cat);
         setSelectedType(typ);
-        setSelectedStacks(stk ? stk.split(",").map((s: string) => s.trim()).filter((s: string) => s) : []);
+        setSelectedStacks(
+            stk
+                ? stk
+                      .split(",")
+                      .map((s: string) => s.trim())
+                      .filter((s: string) => s)
+                : []
+        );
     }, [searchParams]);
 
     let filteredItems = items;
     if (selectedCategory) {
-        filteredItems = filteredItems.filter((item) => item.categories.includes(selectedCategory));
+        filteredItems = filteredItems.filter((item) =>
+            item.categories.includes(selectedCategory)
+        );
     }
     if (selectedType) {
-        filteredItems = filteredItems.filter((item) => item.type === selectedType);
+        filteredItems = filteredItems.filter(
+            (item) => item.type === selectedType
+        );
     }
     if (selectedStacks.length > 0) {
-        filteredItems = filteredItems.filter((item) => selectedStacks.some((s) => item.stacks.includes(s)));
+        filteredItems = filteredItems.filter((item) =>
+            selectedStacks.some((s) => item.stacks.includes(s))
+        );
     }
 
     // Compute available stacks based on current category and type
@@ -57,9 +85,13 @@ export default function ListsPage() {
         new Set(
             items
                 .filter((item) => {
-                    if (selectedCategory && !item.categories.includes(selectedCategory))
+                    if (
+                        selectedCategory &&
+                        !item.categories.includes(selectedCategory)
+                    )
                         return false;
-                    if (selectedType && item.type !== selectedType) return false;
+                    if (selectedType && item.type !== selectedType)
+                        return false;
                     return true;
                 })
                 .flatMap((item) => item.stacks)
@@ -70,7 +102,11 @@ export default function ListsPage() {
     const availableTypes = Array.from(
         new Set(
             items
-                .filter((item) => selectedCategory ? item.categories.includes(selectedCategory) : true)
+                .filter((item) =>
+                    selectedCategory
+                        ? item.categories.includes(selectedCategory)
+                        : true
+                )
                 .map((item) => item.type)
         )
     ).sort();
@@ -110,7 +146,9 @@ export default function ListsPage() {
                     {!loading && filters.categories.length > 0 && (
                         <FilterMenu
                             options={filters.categories}
-                            selectedValues={selectedCategory ? [selectedCategory] : []}
+                            selectedValues={
+                                selectedCategory ? [selectedCategory] : []
+                            }
                             onToggle={() => {}}
                             baseUrl="/lists"
                             paramName="category"
@@ -118,27 +156,33 @@ export default function ListsPage() {
                         />
                     )}
                     {/* Second level filter, shown when category is selected */}
-                    {!loading && selectedCategory && availableTypes.length > 0 && (
-                        <FilterMenu
-                            options={availableTypes}
-                            selectedValues={selectedType ? [selectedType] : []}
-                            onToggle={() => {}}
-                            baseUrl={`/lists?category=${encodeURIComponent(
-                                selectedCategory
-                            )}`}
-                            paramName="type"
-                            isMultiSelect={false}
-                        />
-                    )}
+                    {!loading &&
+                        selectedCategory &&
+                        availableTypes.length > 0 && (
+                            <FilterMenu
+                                options={availableTypes}
+                                selectedValues={
+                                    selectedType ? [selectedType] : []
+                                }
+                                onToggle={() => {}}
+                                baseUrl={`/lists?category=${encodeURIComponent(
+                                    selectedCategory
+                                )}`}
+                                paramName="type"
+                                isMultiSelect={false}
+                            />
+                        )}
                     {/* Third level filter, shown when type is selected */}
-                    {!loading && selectedCategory && availableStacks.length > 0 && (
-                        <FilterMenu
-                            options={availableStacks}
-                            selectedValues={selectedStacks}
-                            onToggle={toggleStack}
-                            isMultiSelect={true}
-                        />
-                    )}
+                    {!loading &&
+                        selectedCategory &&
+                        availableStacks.length > 0 && (
+                            <FilterMenu
+                                options={availableStacks}
+                                selectedValues={selectedStacks}
+                                onToggle={toggleStack}
+                                isMultiSelect={true}
+                            />
+                        )}
                 </div>
             </div>
             {/* Content */}
@@ -155,7 +199,16 @@ export default function ListsPage() {
                                     window.open(item.links[0].url, "_blank")
                                 }
                             >
-                                <div className="w-full aspect-[4/3] bg-gradient-to-br from-[#FFB31B] via-[#FF32D9] to-[#2B0BFF]"></div>
+                                <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-[#FFB31B] via-[#FF32D9] to-[#2B0BFF]">
+                                    {item.image && (
+                                        <Image
+                                            src={item.image}
+                                            alt={item.name}
+                                            layout="fill"
+                                            objectFit="cover"
+                                        />
+                                    )}
+                                </div>
                                 <div className="mix-blend-normal flex flex-col flex-grow">
                                     <div
                                         className={`flex-1 ${

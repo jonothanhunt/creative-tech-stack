@@ -103,29 +103,8 @@ export default function EditPage() {
     };
 
     const processImage = (file: File): Promise<File> => {
-        return new Promise((resolve) => {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                const img = new window.Image();
-                img.onload = () => {
-                    const canvas = document.createElement('canvas');
-                    const ctx = canvas.getContext('2d')!;
-                    const maxWidth = 512;
-                    const scale = Math.min(1, maxWidth / img.width);
-                    canvas.width = img.width * scale;
-                    canvas.height = img.height * scale;
-                    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                    canvas.toBlob((blob) => {
-                        if (blob) {
-                            const processedFile = new File([blob], 'image.jpg', { type: 'image/jpeg' });
-                            resolve(processedFile);
-                        }
-                    }, 'image/jpeg', 0.8);
-                };
-                img.src = e.target?.result as string;
-            };
-            reader.readAsDataURL(file);
-        });
+        // For now, just return the file as is
+        return Promise.resolve(file);
     };
 
     const uploadImage = async (file: File): Promise<string> => {
