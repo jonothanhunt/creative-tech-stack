@@ -19,13 +19,13 @@ export default function Header() {
 
     if (pathname === "/" || pathname === "/lists") {
         return (
-            <>
-                <header className="relative shadow-sm pt-10 pb-6 mix-blend-color-dodge">
-                    <div className="absolute inset-0">
+            <div className="bg-black">
+                <header className="relative shadow-sm pt-10 pb-6 mix-blend-normal">
+                    <div className="z-10 absolute inset-0">
                         <HeaderCanvas />
                     </div>
                     <div className="flex flex-col -ml-1">
-                        <div className="font-lastik text-7xl sm:text-9xl md:text-9xl leading-[80%] font-[50] flex">
+                        <div className="font-lastik text-7xl sm:text-8xl leading-[80%] font-[50] flex">
                             {/* <div className="bg-ct-primary w-26 h-26 rounded-full -mt-5" /> */}
                             <VariableProximity
                                 label="Creative"
@@ -36,7 +36,7 @@ export default function Header() {
                             />
                             {/* <ScrambledText className="whitespace-nowrap tracking-tight">Creative</ScrambledText> */}
                         </div>
-                        <div className="font-lastik text-7xl sm:text-9xl md:text-9xl leading-[80%] font-[50] flex gap-4 items-center">
+                        <div className="font-lastik text-7xl sm:text-8xl leading-[80%] font-[50] flex gap-4 items-center">
                             <VariableProximity
                                 label="Tech"
                                 fromFontVariationSettings="'wght' 50"
@@ -46,19 +46,19 @@ export default function Header() {
                             />
                             {/* <ScrambledText className="whitespace-nowrap tracking-tight">Tech</ScrambledText> */}
                         </div>
-                        <div className="font-lastik text-7xl sm:text-9xl md:text-9xl leading-[80%] font-[50] flex gap-4 items-center">
-                    <VariableProximity
-                        label="Stack"
-                        fromFontVariationSettings="'wght' 50"
-                        toFontVariationSettings="'wght' 100"
-                        containerRef={containerRef}
-                        className="whitespace-nowrap tracking-tight"
-                    />
-                    {/* <ScrambledText className="whitespace-nowrap tracking-tight">Stack</ScrambledText> */}
-                </div>
+                        <div className="font-lastik text-7xl sm:text-8xl leading-[80%] font-[50] flex gap-4 items-center">
+                            <VariableProximity
+                                label="Stack"
+                                fromFontVariationSettings="'wght' 50"
+                                toFontVariationSettings="'wght' 100"
+                                containerRef={containerRef}
+                                className="whitespace-nowrap tracking-tight"
+                            />
+                            {/* <ScrambledText className="whitespace-nowrap tracking-tight">Stack</ScrambledText> */}
+                        </div>
                     </div>
                 </header>
-            </>
+            </div>
         );
     } else {
         return null;

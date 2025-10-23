@@ -40,7 +40,7 @@ export default async function BlogPost({
 
     return (
         <div className="h-screen max-h-screen grid grid-cols-1 grid-rows-[auto_1fr]">
-            <header className="mix-blend-color-dodge">
+            <header className="mix-blend-normal">
                 <Link
                     href="/"
                     className="group hover:bg-ct-primary flex flex-row gap-2 justify-between text-3xl sm:text-3xl md:text-3xl py-2 transition-[padding,background-color] duration-200 group-hover:duration-100  divide-ct-primary divide"

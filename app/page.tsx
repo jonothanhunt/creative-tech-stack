@@ -46,11 +46,11 @@ export default function Home() {
 
     return (
         <div className="">
-            <div className="sticky top-0 mix-blend-color-dodge">
+            <div className="sticky top-0 mix-blend-normal">
                 <Nav />
             </div>
-            <main className="w-full">
-                <div className="mix-blend-color-dodge">
+            <main className="w-full ">
+                <div className="">
                     {posts.map((post) => (
                         <Link
                             key={post.slug}

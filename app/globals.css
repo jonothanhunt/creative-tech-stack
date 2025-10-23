@@ -6,7 +6,7 @@
     --font-instrument: var(--font-instrument-serif);
     --font-display: var(--font-lastik);
 
-    --color-ct-primary: rgb(255, 249, 229);
+    --color-ct-primary: rgb(255, 237, 163);
     --color-ct-secondary: rgb(16, 0, 55);
 
     /* --color-ct-primary: rgb(16, 0, 55);
@@ -14,14 +14,16 @@
 }
 
 body {
+    /* color: rgb(255, 237, 163); */
     /* background-color: var(--color-ct-secondary); */
     /* background: #833ab4; */
-    background: linear-gradient(
-        40deg,
-        rgba(131, 58, 180, 1) 0%,
-        rgb(169, 20, 20) 50%,
-        rgb(176, 117, 36) 100%
-    );
+    /* background: linear-gradient(
+        90deg,
+        #FFB31B 0%,
+        #FF32D9 50%,
+        #2B0BFF 100%
+    ); */
+    background: red;
     background-size: 100% 100%;
     background-attachment: fixed;
     color: var(--color-ct-primary);
