@@ -6,25 +6,24 @@
     --font-instrument: var(--font-instrument-serif);
     --font-display: var(--font-lastik);
 
-    --color-ct-primary: rgb(255, 237, 163);
-    --color-ct-secondary: rgb(16, 0, 55);
+    --color-ct-primary: var(--ct-primary);
+    --color-ct-secondary: var(--ct-secondary);
+}
 
-    /* --color-ct-primary: rgb(16, 0, 55);
-  --color-ct-secondary: rgb(255, 249, 229); */
+/* Light Mode (flipped: Dark Text, Light BG) */
+:root {
+
+    --ct-primary: rgb(255, 237, 163);
+    --ct-secondary: rgb(16, 0, 55);
+}
+
+/* Dark Mode (original: Light Text, Dark BG) */
+.dark {
+    --ct-primary: rgb(16, 0, 55);
+    --ct-secondary: rgb(255, 237, 163);
 }
 
 body {
-    /* color: rgb(255, 237, 163); */
-    /* background-color: var(--color-ct-secondary); */
-    /* background: #833ab4; */
-    /* background: linear-gradient(
-        90deg,
-        #FFB31B 0%,
-        #FF32D9 50%,
-        #2B0BFF 100%
-    ); */
-    background: red;
-    background-size: 100% 100%;
-    background-attachment: fixed;
+    background-color: var(--color-ct-secondary);
     color: var(--color-ct-primary);
 }

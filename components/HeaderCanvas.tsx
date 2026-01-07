@@ -50,7 +50,7 @@ function Box() {
 
     return (
         <group position={[2, 0, 0]} ref={groupRef}>
-            <mesh ref={meshRef}  rotation={[0.3, 0.2, 0]}>
+            <mesh ref={meshRef} rotation={[0.3, 0.2, 0]}>
                 <octahedronGeometry args={[3, 1]} />
                 <shaderMaterial
                     vertexShader={vertexShader}
@@ -78,7 +78,7 @@ const HeaderCanvas: React.FC<HeaderCanvasProps> = () => {
             }}
             camera={{ position: [0, 0, 5], fov: 40, near: 0.1, far: 10 }}
             dpr={[0.1, 0.1]}
-            
+
             onCreated={(state) => state.gl.setClearColor("black")}
         >
             <Box />
@@ -88,7 +88,7 @@ const HeaderCanvas: React.FC<HeaderCanvasProps> = () => {
                 // invert={false}
                 resolution={0.1}
                 characters=" .:-+*=%@#"
-                // characters=" #@%=*+-:."
+            // characters=" #@%=*+-:."
             />
         </Canvas>
     );

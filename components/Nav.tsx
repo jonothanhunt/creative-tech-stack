@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 export default function Nav() {
     const pathname = usePathname();
@@ -26,36 +27,34 @@ export default function Nav() {
             className="flex flex-row flex-wrap justify-between items-center text-3xl sm:text-3xl h-12 border-y-2 border-ct-primary"
         >
             <div
-                className={`transition-all h-11 duration-500 hidden sm:inline -ml-1 border-r-2 border-ct overflow-hidden ${
-                    isStuck ? "w-full sm:w-70" : "w-0"
-                }`}
+                className={`transition-all h-full duration-500 hidden sm:inline -ml-1 border-r-2 border-ct-primary overflow-hidden ${isStuck ? "w-full sm:w-70" : "w-0"
+                    }`}
             >
                 <h1
-                    className={`min-w-70 whitespace-nowrap px-auto pt-1 font-lastik font-[50]  transition-[color,background-color] flex items-center justify-center`}
+                    className={`min-w-70 whitespace-nowrap px-auto pt-[0.38rem] font-lastik font-[50]  transition-[color,background-color] flex items-center justify-center`}
                 >
                     Creative Tech Stack
                 </h1>
             </div>
             <Link
                 href="/"
-                className={`flex-1 h-11 font-instrument uppercase transition-[color,background-color] flex items-center justify-center ${
-                    pathname === "/"
-                        ? "text-ct-secondary bg-ct-primary"
-                        : "text-ct-primary"
-                } hover:text-ct-secondary hover:bg-ct-primary`}
+                className={`flex-1 h-full py-2 px-2 font-instrument uppercase transition-[color,background-color] flex items-center justify-center ${pathname === "/"
+                    ? "text-ct-secondary bg-ct-primary"
+                    : "text-ct-primary"
+                    } hover:text-ct-secondary hover:bg-ct-primary`}
             >
                 Newsletter
             </Link>
             <Link
                 href="/lists"
-                className={` flex-1 h-11 font-instrument uppercase transition-[color,background-color] flex items-center justify-center ${
-                    pathname === "/lists"
-                        ? "text-ct-secondary bg-ct-primary"
-                        : "text-ct-primary"
-                } hover:text-ct-secondary hover:bg-ct-primary`}
+                className={` flex-1 h-full py-2 px-2 font-instrument uppercase transition-[color,background-color] flex items-center justify-center ${pathname === "/lists"
+                    ? "text-ct-secondary bg-ct-primary"
+                    : "text-ct-primary"
+                    } hover:text-ct-secondary hover:bg-ct-primary`}
             >
                 Lists
             </Link>
+            <ThemeToggle className="hidden sm:flex" />
         </nav>
     );
 }

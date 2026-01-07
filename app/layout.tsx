@@ -24,9 +24,13 @@ const lastik = localFont({
 });
 
 export const metadata: Metadata = {
-    title: "Creative Tech Newsletter",
-    description: "Exploring the intersection of creativity and technology",
+    title: "Creative Tech Stack",
+    description: "",
 };
+
+import { ThemeProvider } from "@/components/ThemeProvider";
+
+// ... existing imports
 
 export default function RootLayout({
     children,
@@ -34,12 +38,14 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en" className="m-0 p-0">
+        <html lang="en" className="m-0 p-0" suppressHydrationWarning>
             <body
                 className={`${atkinson.className} ${lastik.variable} ${instrumentSerif.variable}  font-sans antialiased m-0 p-0`}
             >
-                <Header />
-                {children}
+                <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+                    <Header />
+                    {children}
+                </ThemeProvider>
             </body>
         </html>
     );
