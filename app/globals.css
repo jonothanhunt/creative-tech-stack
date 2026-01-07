@@ -27,3 +27,28 @@ body {
     background-color: var(--color-ct-secondary);
     color: var(--color-ct-primary);
 }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-ct-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-ct-primary);
+    border: 2px solid var(--color-ct-secondary);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--color-ct-secondary);
+}
+
+/* HTML only in Firefox supports scrollbar-color on the root usually, or body */
+html {
+    scrollbar-width: auto;
+    scrollbar-color: var(--color-ct-primary) var(--color-ct-secondary);
+}
