@@ -20,7 +20,7 @@ export default function FilterMenu({
     className = "",
 }: FilterMenuProps) {
     const router = useRouter();
-    const baseClasses = "w-fit flex-grow h-11 px-2 font-instrument uppercase transition-[color,background-color] flex items-center justify-center whitespace-nowrap";
+    const baseClasses = "group w-fit flex-grow h-11 px-2 font-instrument uppercase transition-[color,background-color] flex items-center justify-center whitespace-nowrap min-w-[45%] md:min-w-[30%]";
     const buildHref = (option: string) => {
         // If a baseUrl is provided, append the param using ? or & depending on existing query
         const param = encodeURIComponent(option);
@@ -39,40 +39,44 @@ export default function FilterMenu({
     };
 
     return (
-        <div className={`flex flex-row flex-wrap justify-between items-center text-3xl sm:text-3xl border-b-2 border-ct-primary ${className}`}>
-            {options.map((option) => {
-                const isSelected = selectedValues.includes(option);
+        <div className={`overflow-hidden border-b-2 border-ct-primary ${className}`}>
+            <div className={`flex flex-row flex-wrap justify-center items-center text-3xl sm:text-3xl -ml-[2px] -mt-[2px] w-[calc(100%+2px)]`}>
+                {options.map((option) => {
+                    const isSelected = selectedValues.includes(option);
 
-                if (isMultiSelect) {
-                    return (
-                        <button
-                            key={option}
-                            onClick={() => onToggle(option)}
-                            className={`${baseClasses} ${
-                                isSelected
+                    if (isMultiSelect) {
+                        return (
+                            <button
+                                key={option}
+                                onClick={() => onToggle(option)}
+                                className={`${baseClasses} border-l-2 border-t-2 border-r-0 border-b-0 border-ct-primary ${isSelected
                                     ? "text-ct-secondary bg-ct-primary"
                                     : "text-ct-primary"
-                            } hover:text-ct-secondary hover:bg-ct-primary`}
-                        >
-                            {option}
-                        </button>
-                    );
-                } else {
-                    return (
-                        <button
-                            key={option}
-                            onClick={() => handleSingleSelect(option)}
-                            className={`${baseClasses} ${
-                                isSelected
+                                    } hover:text-ct-secondary hover:bg-ct-primary`}
+                            >
+                                {option}
+                            </button>
+                        );
+                    } else {
+                        const hasSelection = selectedValues.length > 0;
+                        const isDimmed = hasSelection && !isSelected;
+                        return (
+                            <button
+                                key={option}
+                                onClick={() => handleSingleSelect(option)}
+                                className={`${baseClasses} border-l-2 border-t-2 border-r-0 border-b-0 border-ct-primary ${isSelected
                                     ? "text-ct-secondary bg-ct-primary"
                                     : "text-ct-primary"
-                            } hover:text-ct-secondary hover:bg-ct-primary`}
-                        >
-                            {option}
-                        </button>
-                    );
-                }
-            })}
+                                    } hover:text-ct-secondary hover:bg-ct-primary`}
+                            >
+                                <span className={isDimmed ? "opacity-60 group-hover:opacity-100 transition-opacity" : ""}>
+                                    {option}
+                                </span>
+                            </button>
+                        );
+                    }
+                })}
+            </div>
         </div>
     );
 }
