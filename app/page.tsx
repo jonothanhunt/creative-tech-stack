@@ -3,6 +3,8 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 import Nav from "@/components/Nav";
+import SubscribeForm from "@/components/SubscribeForm";
+import React from "react";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
@@ -45,11 +47,11 @@ export default function Home() {
     const posts = getPosts();
 
     return (
-        <div className="">
-            <div className="sticky top-0 mix-blend-normal">
+        <div className="bg-ct-secondary min-h-screen">
+            <div className="sticky top-0 z-10 bg-ct-secondary/90 backdrop-blur-2xl">
                 <Nav />
             </div>
-            <main className="w-full ">
+            <main className="w-full">
                 <div className="">
                     {posts.map((post) => (
                         <Link
@@ -57,24 +59,24 @@ export default function Home() {
                             href={`/newsletter/${post.slug}`}
                             className="group"
                         >
-                            <article className=" hover:bg-ct-primary flex flex-col sm:flex-row sm:gap-6 justify-between text-3xl sm:text-4xl md:text-4xl border-b-2 py-2 transition-[padding,background-color] duration-1000 group-hover:duration-100 border-y-ct-primary divide-ct-primary divide">
-                                <h3 className="w-fit font-instrument uppercase transition-colors text-ct-primary group-hover:text-ct-secondary">
+                            <article className=" hover:bg-ct-primary flex flex-col sm:flex-row sm:gap-6 justify-between text-3xl sm:text-4xl md:text-4xl border-b-2 py-2 px-2 transition-[padding,background-color] duration-1000 group-hover:duration-100 border-y-ct-primary divide-ct-primary divide">
+                                <h3 className="w-fit font-instrument transition-colors text-ct-primary group-hover:text-ct-secondary text-balance">
                                     {post.title}
                                 </h3>
                                 <time className="font-instrument uppercase transition-colors text-ct-primary group-hover:text-ct-secondary">
                                     {formatDate(post.date)}
                                 </time>
-                                {/* <div className="flex-1 flex-col justify-between">
-                                <p className="">{post.description}</p>
-                            </div> */}
                             </article>
                         </Link>
                     ))}
+                    <div className="mt-14">
+                        <SubscribeForm />
+                    </div>
                 </div>
             </main>
-            <footer className="py-4 text-center text-sm text-ct-primary">
-                Written by{" "}
-                <Link href="https://jonothan.dev">Jonothan Hunt</Link>
+            <footer className="pt-12 pb-4 text-center text-lg text-ct-primary">
+                by{" "}
+                <Link className="underline underline-offset-4" href="https://jonothan.dev">Jonothan.dev</Link>
             </footer>
         </div>
     );

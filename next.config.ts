@@ -10,7 +10,8 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'placehold.co' },
-      { protocol: 'https', hostname: 'www.google.com' }
+      { protocol: 'https', hostname: 'www.google.com' },
+      { protocol: 'https', hostname: 'gks4b3xeraclzmtf.public.blob.vercel-storage.com' }
     ]
   },
   /* config options here */

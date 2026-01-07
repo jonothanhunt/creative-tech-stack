@@ -6,6 +6,9 @@ import { mdxComponents } from "@/mdx-components";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { TfiArrowLeft } from "react-icons/tfi";
+import { ThemeToggle } from "@/components/ThemeToggle";
+
+// ... existing imports
 
 export default async function BlogPost({
     params,
@@ -39,33 +42,40 @@ export default async function BlogPost({
     }
 
     return (
-        <div className="h-screen max-h-screen grid grid-cols-1 grid-rows-[auto_1fr]">
+        <div className="h-screen max-h-screen grid grid-cols-1 grid-rows-[auto_1fr] bg-ct-secondary">
             <header className="mix-blend-normal">
-                <Link
-                    href="/"
-                    className="group hover:bg-ct-primary flex flex-row gap-2 justify-between text-3xl sm:text-3xl md:text-3xl py-2 transition-[padding,background-color] duration-200 group-hover:duration-100  divide-ct-primary divide"
-                >
-                    <div className="w-fit font-instrument uppercase whitespace-nowrap transition-colors text-ct-primary/50 group-hover:text-ct-secondary">
-                        <TfiArrowLeft className="inline-block -ml-1 -mt-[0.4rem] h-6" />
-                        Back
+                {/* Top Bar: Back | Title | Toggle */}
+                <div className="flex flex-row justify-between text-3xl sm:text-3xl md:text-3xl border-b-2 border-ct-primary h-12">
+                    <Link
+                        href="/"
+                        className="group hover:bg-ct-primary flex flex-row gap-2 items-center py-2 px-2 transition-[background-color] duration-200 border-r-2 border-ct-primary"
+                    >
+                        <div className="w-fit font-instrument whitespace-nowrap transition-colors text-ct-primary group-hover:text-ct-secondary">
+                            <TfiArrowLeft className="inline-block -ml-1 -mt-[0.4rem] h-6" />
+                            Back
+                        </div>
+                    </Link>
+                    <div className="flex-grow font-instrument text-ct-primary px-3 flex items-center whitespace-nowrap overflow-hidden min-w-0">
+                        <span className="min-[500px]:hidden">CTS</span>
+                        <span className="hidden min-[500px]:inline">Creative Tech Stack</span>
                     </div>
-                    <h1 className="font-instrument uppercase transition-colors text-ct-primary/50 group-hover:text-ct-secondary">
-                        Creative Tech{" "}
-                        <span className="hidden sm:inline">Newsletter</span>
-                    </h1>
-                </Link>
-                <div className="group flex flex-col sm:flex-row sm:gap-6 justify-between text-3xl sm:text-3xl md:text-3xl border-t-2 py-2  border-y-ct-primary divide-ct-primary divide">
-                    <h3 className="w-fit font-instrument uppercase  text-ct-primary ">
+
+                    <ThemeToggle />
+                </div>
+
+                {/* Article Info Bar */}
+                <div className="group flex flex-row flex-wrap gap-x-6 gap-y-0 justify-between text-3xl sm:text-3xl md:text-3xl border-b-2 border-ct-primary py-2 px-2 divide-ct-primary">
+                    <h3 className="w-fit font-instrument text-ct-primary text-balance">
                         {data.title}
                     </h3>
-                    <time className="font-instrument uppercase text-ct-primary/80 ">
+                    <time className="font-instrument uppercase text-ct-primary whitespace-nowrap">
                         {formatDate(data.date)}
                     </time>
                 </div>
             </header>
-            <article className="w-full overflow-y-auto bg-ct-primary">
-                <div className="w-full h-screen  text-ct-secondary">
-                    <div className="prose prose-lg max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <article className="w-full overflow-y-auto bg-ct-secondary">
+                <div className="w-full h-screen  text-ct-primary">
+                    <div className="prose prose-lg max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-[50vh]">
                         <MDXRemote
                             source={content}
                             components={mdxComponents}
