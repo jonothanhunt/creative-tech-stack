@@ -34,8 +34,12 @@ export default function FilterMenu({
     };
 
     const handleSingleSelect = (option: string) => {
-        const href = buildHref(option);
-        router.push(href);
+        if (selectedValues.includes(option)) {
+            router.push(baseUrl || "/lists");
+        } else {
+            const href = buildHref(option);
+            router.push(href);
+        }
     };
 
     return (
