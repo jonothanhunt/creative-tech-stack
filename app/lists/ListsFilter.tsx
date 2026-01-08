@@ -7,6 +7,7 @@ import Image from "next/image";
 import FilterMenu from "@/components/FilterMenu";
 import Nav from "@/components/Nav";
 import { TfiArrowUp, TfiArrowDown } from "react-icons/tfi";
+import Footer from "@/components/Footer";
 
 interface ListsFilterProps {
     items: ItemWithId[];
@@ -127,7 +128,6 @@ export default function ListsFilter({
     };
 
     const stickyRef = useRef<HTMLDivElement>(null);
-    const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
     return (
         <div className="bg-ct-secondary min-h-screen">
@@ -214,13 +214,7 @@ export default function ListsFilter({
                                 </div>
                                 <div className="mix-blend-normal flex flex-col flex-grow">
                                     <div
-                                        className={`flex-1 ${hoveredItem !== item.name
-                                            ? "group-hover:bg-ct-primary"
-                                            : ""
-                                            } text-ct-primary ${hoveredItem !== item.name
-                                                ? "group-hover:text-ct-secondary"
-                                                : ""
-                                            } p-4 transition-[color,background-color]`}
+                                        className="flex-1 group-hover:bg-ct-primary group-has-[a:hover]:bg-transparent text-ct-primary group-hover:text-ct-secondary group-has-[a:hover]:text-ct-primary p-4 transition-[color,background-color]"
                                     >
                                         <h3 className="text-2xl font-lastik font-[50] mb-2 text-balance">
                                             {item.name}
@@ -233,11 +227,7 @@ export default function ListsFilter({
                                                 return (
                                                     <span
                                                         key={index}
-                                                        className={`flex-1 py-1 px-2 font-instrument text-ct-primary bg-transparent transition-[color,background-color] ${hoveredItem !==
-                                                            item.name
-                                                            ? "group-hover:text-ct-secondary group-hover:bg-ct-primary"
-                                                            : ""
-                                                            } no-underline text-center whitespace-nowrap first:border-l-0 border-l-2 border-ct-primary`}
+                                                        className="flex-1 py-1 px-2 font-instrument text-ct-primary bg-transparent transition-[color,background-color] group-hover:text-ct-secondary group-hover:bg-ct-primary group-has-[a:hover]:text-ct-primary group-has-[a:hover]:bg-transparent no-underline text-center whitespace-nowrap first:border-l-0 border-l-2 border-ct-primary"
                                                     >
                                                         {link.title}
                                                     </span>
@@ -251,14 +241,6 @@ export default function ListsFilter({
                                                         rel="noopener noreferrer"
                                                         onClick={(e) =>
                                                             e.stopPropagation()
-                                                        }
-                                                        onMouseEnter={() =>
-                                                            setHoveredItem(
-                                                                item.name
-                                                            )
-                                                        }
-                                                        onMouseLeave={() =>
-                                                            setHoveredItem(null)
                                                         }
                                                         className="flex-1 py-1 px-2 font-instrument text-ct-primary bg-transparent transition-[color,background-color] hover:text-ct-secondary hover:bg-ct-primary no-underline text-center whitespace-nowrap first:border-l-0 border-l-2 border-ct-primary"
                                                     >
@@ -274,6 +256,7 @@ export default function ListsFilter({
                     </div>
                 )}
             </div>
+            <Footer />
         </div>
     );
 }

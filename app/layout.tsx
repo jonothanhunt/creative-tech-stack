@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import { Atkinson_Hyperlegible, Instrument_Serif } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";

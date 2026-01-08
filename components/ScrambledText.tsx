@@ -1,83 +1,121 @@
 import React, { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { SplitText } from 'gsap/SplitText';
-import { ScrambleTextPlugin } from 'gsap/ScrambleTextPlugin';
-
-gsap.registerPlugin(SplitText, ScrambleTextPlugin);
 
 export interface ScrambledTextProps {
   radius?: number;
+  // duration is less relevant without GSAP tween, but we can keep it for API compatibility or unused
   duration?: number;
+  // speed can control the scramble update rate
   speed?: number;
   scrambleChars?: string;
   className?: string;
   style?: React.CSSProperties;
-  children: React.ReactNode;
+  children: string; // Enforce string children for splitting
 }
 
 const ScrambledText: React.FC<ScrambledTextProps> = ({
   radius = 100,
-  duration = 1.2,
-  speed = 0.5,
   scrambleChars = 'CreativeTechStack',
   className = '',
   style = {},
   children
 }) => {
-  const rootRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const spansRef = useRef<(HTMLSpanElement | null)[]>([]);
+  const originalChars = useRef<string[]>([]);
+  const runningRef = useRef<boolean>(false);
 
   useEffect(() => {
-    if (!rootRef.current) return;
+    // Populate refs
+    originalChars.current = children.split('');
+  }, [children]);
 
-    const split = SplitText.create(rootRef.current.querySelector('p'), {
-      type: 'chars',
-      charsClass: 'inline-block will-change-transform'
-    });
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
 
-    split.chars.forEach(el => {
-      const c = el as HTMLElement;
-      gsap.set(c, { attr: { 'data-content': c.innerHTML } });
-    });
-
-    const handleMove = (e: PointerEvent) => {
-      split.chars.forEach(el => {
-        const c = el as HTMLElement;
-        const { left, top, width, height } = c.getBoundingClientRect();
-        const dx = e.clientX - (left + width / 2);
-        const dy = e.clientY - (top + height / 2);
-        const dist = Math.hypot(dx, dy);
-
-        if (dist < radius) {
-          gsap.to(c, {
-            overwrite: true,
-            duration: duration * (1 - dist / radius),
-            scrambleText: {
-              text: c.dataset.content || '',
-              chars: scrambleChars,
-              speed
-            },
-            ease: 'none'
-          });
-        }
-      });
+    let params = {
+      mouseX: -9999,
+      mouseY: -9999
     };
 
-    const el = rootRef.current;
-    el.addEventListener('pointermove', handleMove);
+    // Track mouse
+    const handleMove = (e: PointerEvent) => {
+      params.mouseX = e.clientX;
+      params.mouseY = e.clientY;
+      if (!runningRef.current) {
+        startLoop();
+      }
+    };
+
+    let animationFrameId: number;
+
+    const startLoop = () => {
+      runningRef.current = true;
+      const loop = () => {
+        let active = false;
+
+        spansRef.current.forEach((span, i) => {
+          if (!span) return;
+
+          const rect = span.getBoundingClientRect();
+          const centerX = rect.left + rect.width / 2;
+          const centerY = rect.top + rect.height / 2;
+
+          const dx = params.mouseX - centerX;
+          const dy = params.mouseY - centerY;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < radius) {
+            active = true;
+            // Probability to scramble based on distance? 
+            // Or just scramble constantly if near.
+            // Let's scramble randomly if close.
+            if (Math.random() < 0.3) {
+              const randomChar = scrambleChars[Math.floor(Math.random() * scrambleChars.length)];
+              if (span.textContent !== randomChar) {
+                span.textContent = randomChar;
+              }
+            }
+          } else {
+            // Reset to original
+            const orig = originalChars.current[i];
+            if (span.textContent !== orig) {
+              span.textContent = orig;
+            }
+          }
+        });
+
+        if (active) {
+          animationFrameId = requestAnimationFrame(loop);
+        } else {
+          runningRef.current = false;
+        }
+      };
+      loop();
+    };
+
+    window.addEventListener('pointermove', handleMove);
 
     return () => {
-      el.removeEventListener('pointermove', handleMove);
-      split.revert();
+      window.removeEventListener('pointermove', handleMove);
+      cancelAnimationFrame(animationFrameId);
     };
-  }, [radius, duration, speed, scrambleChars]);
+
+  }, [radius, scrambleChars]);
 
   return (
-    <div
-      ref={rootRef}
-      className={`text-ct-primary ${className}`}
-      style={style}
-    >
-      <p>{children}</p>
+    <div ref={containerRef} className={`relative ${className}`} style={style} aria-label={children}>
+      <p aria-hidden="true">
+        {children.split('').map((char, i) => (
+          <span
+            key={i}
+            ref={(el) => { spansRef.current[i] = el; }}
+            className="inline-block will-change-contents"
+          >
+            {char === ' ' ? '\u00A0' : char}
+          </span>
+        ))}
+      </p>
     </div>
   );
 };

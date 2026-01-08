@@ -19,7 +19,6 @@
     "@types/three": "^0.180.0",
     "dotenv": "^17.2.3",
     "gray-matter": "^4.0.3",
-    "gsap": "^3.13.0",
     "motion": "^12.23.24",
     "next": "15.5.9",
     "next-mdx-remote": "^5.0.0",

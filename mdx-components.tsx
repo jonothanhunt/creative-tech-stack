@@ -1,5 +1,10 @@
 import type { MDXComponents } from "mdx/types";
 import SubscribeForm from "@/components/SubscribeForm";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
+import InfoBlock from "@/components/InfoBlock";
+import MDXBlockquote from "@/components/MDXBlockquote";
+import LinkedInEmbed from "@/components/LinkedInEmbed";
+import VimeoEmbed from "@/components/VimeoEmbed";
 
 export const mdxComponents: MDXComponents = {
     SubscribeForm: () => (
@@ -23,32 +28,33 @@ export const mdxComponents: MDXComponents = {
         </h3>
     ),
     p: ({ children }) => (
-        <p className="text-lg mb-4 text-ct-primary leading-relaxed">{children}</p>
+        <p className="text-lg mb-4 text-ct-primary leading-relaxed text-pretty">{children}</p>
     ),
-    a: ({ children, href }) => (
-        <a
-            className="text-ct-primary underline-offset-4 hover:bg-ct-primary hover:text-ct-secondary underline transition-colors"
-            href={href}
-        >
-            {children}
-        </a>
-    ),
+    a: ({ children, href }) => {
+        const isExternal = href?.startsWith("http") || href?.startsWith("https");
+        return (
+            <a
+                className="text-ct-primary underline-offset-4 hover:bg-ct-primary hover:text-ct-secondary underline transition-colors"
+                href={href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+            >
+                {children}
+            </a>
+        );
+    },
     ul: ({ children }) => (
-        <ul className="text-lg list-disc list-inside mb-4 text-ct-primary">
+        <ul className="text-lg list-disc list-inside mb-4 text-ct-primary text-pretty">
             {children}
         </ul>
     ),
     ol: ({ children }) => (
-        <ol className="text-lg list-decimal list-inside mb-4 text-ct-primary">
+        <ol className="text-lg list-decimal list-inside mb-4 text-ct-primary text-pretty">
             {children}
         </ol>
     ),
     li: ({ children }) => <li className="mb-1">{children}</li>,
-    blockquote: ({ children }) => (
-        <blockquote className="border-l-4 border-ct-primary pl-4 italic text-ct-primary mb-4">
-            {children}
-        </blockquote>
-    ),
+    blockquote: ({ children }) => <MDXBlockquote>{children}</MDXBlockquote>,
     code: ({ children }) => (
         <code className="bg-ct-primary text-ct-secondary px-1 py-0.5 rounded text-sm font-mono">
             {children}
@@ -59,4 +65,8 @@ export const mdxComponents: MDXComponents = {
             {children}
         </pre>
     ),
+    YouTubeEmbed,
+    InfoBlock,
+    LinkedInEmbed,
+    VimeoEmbed,
 };

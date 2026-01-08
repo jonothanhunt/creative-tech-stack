@@ -26,14 +26,14 @@ const fragmentShader = `
 function Box() {
     const groupRef = useRef<THREE.Group>(null);
     const meshRef = useRef<THREE.Mesh>(null);
-    const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+    const mousePos = useRef({ x: 0, y: 0 });
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
-            setMousePos({
+            mousePos.current = {
                 x: (e.clientX / window.innerWidth) * 2 - 1,
                 y: -(e.clientY / window.innerHeight) * 2 + 1,
-            });
+            };
         };
         window.addEventListener('mousemove', handleMouseMove);
         return () => window.removeEventListener('mousemove', handleMouseMove);
@@ -41,8 +41,8 @@ function Box() {
 
     useFrame((state, delta) => {
         if (groupRef.current) {
-            groupRef.current.rotation.y = mousePos.x * 0.3;
-            groupRef.current.rotation.x = mousePos.y * -0.3;
+            groupRef.current.rotation.y = mousePos.current.x * 0.3;
+            groupRef.current.rotation.x = mousePos.current.y * -0.3;
         }
         if (meshRef.current) {
             meshRef.current.rotation.x += delta * 0.04;

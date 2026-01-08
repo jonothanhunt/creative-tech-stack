@@ -129,6 +129,15 @@ const VariableProximity = forwardRef<HTMLSpanElement, VariableProximityProps>((p
     lastPositionRef.current = { x, y };
     const containerRect = containerRef.current.getBoundingClientRect();
 
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      letterRefs.current.forEach((letterRef) => {
+        if (letterRef) {
+          letterRef.style.fontVariationSettings = fromFontVariationSettings;
+        }
+      });
+      return;
+    }
+
     letterRefs.current.forEach((letterRef, index) => {
       if (!letterRef) return;
 

@@ -7,8 +7,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { TfiArrowLeft } from "react-icons/tfi";
 import { ThemeToggle } from "@/components/ThemeToggle";
-
-// ... existing imports
+import Image from "next/image";
+import StickyHeader from "@/components/StickyHeader";
+import Footer from "@/components/Footer";
 
 export default async function BlogPost({
     params,
@@ -43,9 +44,9 @@ export default async function BlogPost({
 
     return (
         <div className="h-screen max-h-screen grid grid-cols-1 grid-rows-[auto_1fr] bg-ct-secondary">
-            <header className="mix-blend-normal">
-                {/* Top Bar: Back | Title | Toggle */}
-                <div className="flex flex-row justify-between text-3xl sm:text-3xl md:text-3xl border-b-2 border-ct-primary h-12">
+            {/* Top Bar - Fixed */}
+            <header className="z-50 bg-ct-secondary border-b-2 border-ct-primary relative">
+                <div className="flex flex-row justify-between text-3xl sm:text-3xl md:text-3xl h-12">
                     <Link
                         href="/"
                         className="group hover:bg-ct-primary flex flex-row gap-2 items-center py-2 px-2 transition-[background-color] duration-200 border-r-2 border-ct-primary"
@@ -62,27 +63,51 @@ export default async function BlogPost({
 
                     <ThemeToggle />
                 </div>
-
-                {/* Article Info Bar */}
-                <div className="group flex flex-row flex-wrap gap-x-6 gap-y-0 justify-between text-3xl sm:text-3xl md:text-3xl border-b-2 border-ct-primary py-2 px-2 divide-ct-primary">
-                    <h3 className="w-fit font-instrument text-ct-primary text-balance">
-                        {data.title}
-                    </h3>
-                    <time className="font-instrument uppercase text-ct-primary whitespace-nowrap">
-                        {formatDate(data.date)}
-                    </time>
-                </div>
             </header>
-            <article className="w-full overflow-y-auto bg-ct-secondary">
-                <div className="w-full h-screen  text-ct-primary">
-                    <div className="prose prose-lg max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-[50vh]">
+
+            {/* Scrollable Content Area */}
+            <div className="w-full overflow-y-auto bg-ct-secondary relative flex flex-col">
+                {/* Hero Image */}
+                {/* Hero Image */}
+                {data.image && (
+                    <div className="relative w-full h-[50vh] shrink-0 border-b-2 border-ct-primary bg-[#FFEDA3] overflow-hidden">
+                        <Image
+                            src={data.image}
+                            alt={data.title}
+                            fill
+                            className="object-cover grayscale mix-blend-multiply"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-[#100037] mix-blend-lighten pointer-events-none" />
+                        <div
+                            className="absolute inset-0 mix-blend-normal pointer-events-none"
+                            style={{
+                                backgroundImage:
+                                    "radial-gradient(var(--color-ct-secondary) 0.5px, transparent 0.5px), radial-gradient(var(--color-ct-secondary) 0.5px, transparent 0.5px)",
+                                backgroundSize: "4px 4px",
+                                backgroundPosition: "0 0, 2px 2px",
+                            }}
+                        />
+                    </div>
+                )}
+
+                {/* Sticky Title Bar */}
+                <StickyHeader
+                    title={data.title}
+                    date={formatDate(data.date)}
+                />
+
+                {/* Article Content */}
+                <article className="w-full">
+                    <div className="prose prose-lg max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
                         <MDXRemote
                             source={content}
                             components={mdxComponents}
                         />
                     </div>
-                </div>
-            </article>
+                </article>
+                <Footer />
+            </div>
         </div>
     );
 }

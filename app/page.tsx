@@ -4,6 +4,7 @@ import matter from "gray-matter";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import SubscribeForm from "@/components/SubscribeForm";
+import Footer from "@/components/Footer";
 import React from "react";
 
 const postsDirectory = path.join(process.cwd(), "posts");
@@ -74,10 +75,7 @@ export default function Home() {
                     </div>
                 </div>
             </main>
-            <footer className="pt-12 pb-4 text-center text-lg text-ct-primary">
-                by{" "}
-                <Link className="underline underline-offset-4" href="https://jonothan.dev">Jonothan.dev</Link>
-            </footer>
+            <Footer />
         </div>
     );
 }
