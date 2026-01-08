@@ -25,7 +25,7 @@ export default function ListsFilter({
     const searchParams = useSearchParams();
     const router = useRouter();
 
-    const [filters, setFilters] = useState<{
+    const [filters] = useState<{
         categories: string[];
         types: string[];
         stacks: string[];

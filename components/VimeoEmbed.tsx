@@ -31,7 +31,7 @@ export default function VimeoEmbed({ url, title = "Vimeo video player" }: VimeoE
                 if (urlObj.hash && urlObj.hash.includes('t=')) {
                     timeParam = urlObj.hash; // e.g. #t=1m45s
                 }
-            } catch (e) {
+            } catch {
                 // fallback if URL parsing fails
             }
 

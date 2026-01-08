@@ -19,7 +19,7 @@ export default function YouTubeEmbed({ url, title = "YouTube video player" }: Yo
                 const urlObj = new URL(url);
                 const params = new URLSearchParams(urlObj.search);
                 time = params.get("t") || params.get("start");
-            } catch (e) {
+            } catch {
                 // Fallback regex if URL parsing fails
                 const tMatch = url.match(/[?&](?:t|start)=([^&]+)/);
                 if (tMatch) time = tMatch[1];

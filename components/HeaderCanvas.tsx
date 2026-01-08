@@ -2,7 +2,7 @@
 
 import { AsciiRenderer } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
 const vertexShader = `
