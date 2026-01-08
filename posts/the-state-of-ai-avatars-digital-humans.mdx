@@ -1,0 +1,98 @@
+---
+title: "The state of AI avatars and digital humans"
+date: "2026-01-08"
+description: "The very first newsletter."
+image: "/images/the-state-of-ai-avatars-digital-humans/hero.png"
+---
+
+If you want realistic synthetic video of a character talking or doing something, there are four main approaches:
+
+1.  **Specialised Generative models** (e.g., [HeyGen](https://heygen.com), [Synthesia](https://synthesia.io), [Tavus](https://tavus.ai), [Runway's GWM avatars](https://runwayml.com/research/introducing-runway-gwm-1#avatars-section))
+2.  **Generic generative models** (e.g., Google's [Veo 3](https://aistudio.google.com/models/veo-3))
+3.  **'Traditional' CGI animation** (e.g., [Epic's MetaHumans](https://www.metahuman.com/en-US), [Unity's Enemies](https://unity.com/blog/news/introducing-enemies-the-latest-evolution-in-high-fidelity-digital-humans-from-unity))
+4.  **Neural & Volumetric Avatars** (e.g., [Meta's Codec Avatars](https://www.meta.com/emerging-tech/codec-avatars), [Apple's Personas](https://youtu.be/pjW3O5UJjm8?t=267))
+
+## 1. Specialised Generative Models
+These tools are designed specifically for "talking heads". They generally use two techniques:
+
+### Traditional Deepfake Pipeline
+This replaces the face movement of an existing video of someone talking:
+<YouTubeEmbed url="https://www.youtube.com/watch?v=iTZ5CrgnwlM" />
+
+### New Synthetic video
+Each frame is generated from scratch based on a model given only a few frames of the original person:
+<YouTubeEmbed url="https://www.youtube.com/watch?v=wrVgBHvn48I" />
+
+While fairly realistic, videos longer than 30 seconds can still feel unnatural even with camera movement. It takes significant iteration to avoid the uncanny valley.
+
+### Real-time avatars
+
+Real-time avatars are also possible (essentially avatars connected to a fast LLM). While low-latency models like the [OpenAI Realtime API](https://platform.openai.com/docs/guides/realtime) have made the *voice* interaction fluid and interruptible, the **video** still struggles. Most platforms still show artifacts where the avatar transitions from an idle state to a speaking state.
+
+<YouTubeEmbed url="https://www.youtube.com/live/W2oDBUbwsns?si=Baj89brbdNV57Uka&t=986" />
+
+[Runway's GWM avatars](https://runwayml.com/research/introducing-runway-gwm-1#avatars-section) whilst not available to test yet at time of writing look INCREDIBLE:
+<YouTubeEmbed url="https://www.youtube.com/watch?v=rp7wF7HDU-I&t=1m41s" />
+
+## 2. Generic video models
+
+Video models can make some impressive results, especially when combining models like Google's Veo and Runway's Aleph as [Jiaze Li](https://uk.linkedin.com/in/jiaze-li-a54494228) has done:
+
+<LinkedInEmbed url="https://www.linkedin.com/feed/update/urn:li:ugcPost:7390697466708250624/" mode="video" />
+
+However, when there's speech involved, it seems most generative video models do one of 3 voices that sound like every sensationalist YouTuber combined into one voice.
+
+I attempted the same script format as above with Google's Veo 3.1:
+
+<YouTubeEmbed url="https://www.youtube.com/watch?v=wE826PbA3Mc" />
+
+The key benefit of this approach is that you can sort of do anything in the video. But it's capped to seconds and takes a great deal of prompting to get anything that isn't slop.
+
+## 3. CGI & Hybrid Engines
+
+### Epic's Metahumans
+
+I spent a couple weeks experimenting with [MetaHumans](https://www.metahuman.com/en-US) when they first arrived in 2021 and I used them as part of an anti-fraud campaign we ran:
+
+<VimeoEmbed url="https://vimeo.com/831824123?fl=pl&fe=sh#t=1m45s" title="Embedded Work" />
+
+Unreal Engine is a brilliant real-time production engine already used in many production scenarios. Not only can MetaHumans animation be played back at super high quality in real-time, but you can even run motion capture in real-time using [Live Link Face](https://www.youtube.com/watch?v=hwZfM5Eypk8). 
+
+### Neural Rendering
+Neural Rendering e.g. [NVIDIA's RTX Neural Faces](https://developer.nvidia.com/blog/nvidia-rtx-neural-rendering-introduces-next-era-of-ai-powered-graphics-innovation/) takes rasterized faces and 3D pose and generates enhanced faces in real-time:
+
+<YouTubeEmbed url="https://youtu.be/KnozAHKTz9o" />
+
+### NVIDIA ACE
+[NVIDIA ACE (Avatar Cloud Engine)](https://developer.nvidia.com/ace) is a bunch of microservices that handles the LLM, ASR, and Audio2Face. By combining ACE for movement and Neural Rendering for the visuals, we are finally able to see digital humans that can have unscripted, photorealistic conversations in real-time without those obvious artifacts from purely video-based models.
+
+### Unity's Enemies
+Unity also has their own equivalent of MetaHumans called [Enemies](https://unity.com/blog/news/introducing-enemies-the-latest-evolution-in-high-fidelity-digital-humans-from-unity), though I've not heard much since their release and never used them.
+
+<YouTubeEmbed url="https://youtu.be/eXYUNrgqWUU" />
+
+## 4. Neural & Volumetric Avatars
+
+Essentially **Gaussian Splatting** or **Neural Radiance Fields (NeRFs)** to create a 3D volumetric models of people.
+
+This gives us the ability to move the camera around the person in 3D space! [**Meta's Codec Avatars**](https://www.meta.com/emerging-tech/codec-avatars) are the high-end version of this, while [**Apple's Personas**](https://www.apple.com/apple-vision-pro/) on the Vision Pro have brought a version of this to the masses.
+
+[For a more technical breakdown, check out this paper on gaussian head avatars](https://yuelangx.github.io/gaussianheadavatar/). Video from their paper below:
+
+<YouTubeEmbed url="https://youtu.be/kvrrI3EoM5g" />
+
+### Ethics and risks
+
+I've trained models on paid actors; they get paid for the use of their likeness and don't even have to turn up for filming save from the initial shoot. It's a win-win.
+
+Though with the emergence of image-based video generation, it's easier than ever to create content without the approval of the subject. While leading platforms have protections in place, there are ways to bypass them or just find a tool you can run locally.
+
+Legislation is finally catching up. With the [EU AI Act](https://artificialintelligenceact.eu/article/50/) in full effect from this year, clear disclosure for AI-generated humans is now a legal requirement in some places. Knowing what's real remains a challenge. Google’s [SynthID](https://deepmind.google/models/synthid/) embeds watermarks directly into pixels, but most are using the [C2PA](https://c2pa.org/) standard. While [C2PA](https://contentcredentials.org/) provides a kind of "digital nutrition label" that can contain a history of edits and tags, the cryptographic chain is still easily broken by simple workarounds like screenshotting or re-encoding.
+
+## Thanks!
+
+I hope this was in some way helpful — it's my first post so any feedback is appreciated ([hey@jonothan.dev](mailto:hey@jonothan.dev)).
+
+And if you'd be interested in an email version of the newsletter, please sign up below:
+
+<SubscribeForm />
