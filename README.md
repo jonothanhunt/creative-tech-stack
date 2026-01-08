@@ -1,6 +1,8 @@
-# Creative Tech Stack Newsletter
+# Creative Tech Stack
 
 A newsletter and resource hub for creatives and technologists, built with Next.js.
+
+[**Visit Live Site**](https://creativetechstack.jonothan.dev/)
 
 It features a blog/newsletter section and a curated list of tools and resources, both managed via local files (MDX and JSON).
 
@@ -14,8 +16,8 @@ It features a blog/newsletter section and a curated list of tools and resources,
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/jonothanhunt/creative-tech-newsletter.git
-    cd creative-tech-newsletter
+    git clone https://github.com/jonothanhunt/creative-tech-stack.git
+    cd creative-tech-stack
     ```
 
 2.  Install dependencies:
