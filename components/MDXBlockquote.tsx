@@ -97,7 +97,7 @@ export default function MDXBlockquote({ children }: MDXBlockquoteProps) {
 
                 // Replace the first child <p> with our modified version
                 const newFirstChild = React.cloneElement(
-                    firstChild as React.ReactElement<any>,
+                    firstChild as React.ReactElement<unknown>,
                     {},
                     ...newPChildren
                 );

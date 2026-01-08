@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from "@/components/ThemeProvider";
 
-// ... existing imports
+
 
 export default function RootLayout({
     children,

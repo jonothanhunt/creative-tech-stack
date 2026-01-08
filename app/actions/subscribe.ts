@@ -12,9 +12,7 @@ export async function subscribe(formData: FormData) {
     }
 
     if (!process.env.RESEND_API_KEY) {
-        // Fallback for development if no API Key is set yet
-        console.log("Mock Subscription (No API Key):", email);
-        // Simulate network delay
+
         await new Promise(resolve => setTimeout(resolve, 500));
         return { success: true };
     }

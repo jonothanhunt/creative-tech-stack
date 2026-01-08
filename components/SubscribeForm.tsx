@@ -29,14 +29,14 @@ export default function SubscribeForm() {
 
     return (
         <div className="w-full bg-ct-primary text-ct-secondary">
-            {/* Top Text Section */}
+
             <div className="p-4 border-b-2 border-ct-secondary flex items-center justify-center">
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-instrument uppercase text-center text-balance leading-tight">
                     Register your interest for the future email edition.
                 </h3>
             </div>
 
-            {/* Form Section */}
+
             <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row w-full items-stretch">
                 <input
                     type="email"

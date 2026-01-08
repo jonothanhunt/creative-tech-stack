@@ -2,11 +2,8 @@
 
 import { useRef, useEffect } from "react";
 import VariableProximity from "./VariableProximity";
-// import ScrambledText from "./ScrambledText";
-// import MagnetLines from "./MagnetLines";
 import HeaderCanvas from "./HeaderCanvas";
 import { usePathname } from "next/navigation";
-// import Link from "next/link";
 
 export default function Header() {
     const containerRef = useRef<HTMLElement | null>(null);
@@ -26,7 +23,6 @@ export default function Header() {
                     </div>
                     <div className="flex flex-col ml-4">
                         <div className="font-lastik text-7xl sm:text-8xl leading-[80%] font-[50] flex">
-                            {/* <div className="bg-ct-primary w-26 h-26 rounded-full -mt-5" /> */}
                             <VariableProximity
                                 label="Creative"
                                 fromFontVariationSettings="'wght' 50"
@@ -34,7 +30,6 @@ export default function Header() {
                                 containerRef={containerRef}
                                 className="whitespace-nowrap tracking-tight"
                             />
-                            {/* <ScrambledText className="whitespace-nowrap tracking-tight">Creative</ScrambledText> */}
                         </div>
                         <div className="font-lastik text-7xl sm:text-8xl leading-[80%] font-[50] flex gap-4 items-center">
                             <VariableProximity
@@ -44,7 +39,6 @@ export default function Header() {
                                 containerRef={containerRef}
                                 className="whitespace-nowrap tracking-tight"
                             />
-                            {/* <ScrambledText className="whitespace-nowrap tracking-tight">Tech</ScrambledText> */}
                         </div>
                         <div className="font-lastik text-7xl sm:text-8xl leading-[80%] font-[50] flex gap-4 items-center">
                             <VariableProximity
@@ -54,7 +48,6 @@ export default function Header() {
                                 containerRef={containerRef}
                                 className="whitespace-nowrap tracking-tight"
                             />
-                            {/* <ScrambledText className="whitespace-nowrap tracking-tight">Stack</ScrambledText> */}
                         </div>
                     </div>
                 </header>
@@ -64,3 +57,4 @@ export default function Header() {
         return null;
     }
 }
+

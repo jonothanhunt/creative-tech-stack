@@ -87,10 +87,8 @@ const HeaderCanvas: React.FC<HeaderCanvasProps> = () => {
             <AsciiRenderer
                 bgColor="transparent"
                 fgColor="var(--color-ct-primary)"
-                // invert={false}
                 resolution={0.1}
                 characters=" .:-+*=%@#"
-            // characters=" #@%=*+-:."
             />
         </Canvas>
     );

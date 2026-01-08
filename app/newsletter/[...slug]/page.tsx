@@ -44,7 +44,7 @@ export default async function BlogPost({
 
     return (
         <div className="h-screen max-h-screen grid grid-cols-1 grid-rows-[auto_1fr] bg-ct-secondary">
-            {/* Top Bar - Fixed */}
+
             <header className="z-50 bg-ct-secondary border-b-2 border-ct-primary relative">
                 <div className="flex flex-row justify-between text-3xl sm:text-3xl md:text-3xl h-12">
                     <Link
@@ -65,10 +65,9 @@ export default async function BlogPost({
                 </div>
             </header>
 
-            {/* Scrollable Content Area */}
+
             <div className="w-full overflow-y-auto bg-ct-secondary relative flex flex-col">
-                {/* Hero Image */}
-                {/* Hero Image */}
+
                 {data.image && (
                     <div className="relative w-full h-[50vh] shrink-0 border-b-2 border-ct-primary bg-[#FFEDA3] overflow-hidden">
                         <Image
@@ -91,13 +90,13 @@ export default async function BlogPost({
                     </div>
                 )}
 
-                {/* Sticky Title Bar */}
+
                 <StickyHeader
                     title={data.title}
                     date={formatDate(data.date)}
                 />
 
-                {/* Article Content */}
+
                 <article className="w-full">
                     <div className="prose prose-lg max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
                         <MDXRemote

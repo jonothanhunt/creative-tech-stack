@@ -31,10 +31,7 @@ export default function ListsFilter({
         stacks: string[];
     }>({ categories, types, stacks });
 
-    // Loading state is no longer needed for initial data fetch, 
-    // but we might want to keep it if we do client-side filtering that takes time (unlikely here)
-    // or just remove it. Since we have data upfront, we can remove initial loading state.
-    const [loading, setLoading] = useState(false);
+
 
     const [selectedCategory, setSelectedCategory] = useState<string | null>(
         null
@@ -151,7 +148,7 @@ export default function ListsFilter({
                                     isMultiSelect={false}
                                 />
                             )}
-                            {/* Second level filter, shown when category is selected */}
+
                             {selectedCategory &&
                                 availableTypes.length > 0 && (
                                     <FilterMenu
@@ -167,7 +164,7 @@ export default function ListsFilter({
                                         isMultiSelect={false}
                                     />
                                 )}
-                            {/* Third level filter, shown when type is selected */}
+
                             {selectedCategory &&
                                 availableStacks.length > 0 && (
                                     <FilterMenu
@@ -189,7 +186,7 @@ export default function ListsFilter({
                     </button>
                 </div>
             </div>
-            {/* Content */}
+
             <div className="overflow-hidden">
                 {!items.length ? null : (
                     <div className="flex flex-wrap -ml-[2px] -mt-[2px] w-[calc(100%+2px)]">

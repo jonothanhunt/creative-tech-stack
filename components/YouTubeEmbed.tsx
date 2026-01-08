@@ -25,6 +25,9 @@ export default function YouTubeEmbed({ url, title = "YouTube video player" }: Yo
                 if (tMatch) time = tMatch[1];
             }
 
+            // Normalize time
+            // 't' can be '1m30s' or just seconds. Embed param 'start' expects seconds.
+
             if (time) {
                 // If time is just numbers, it's already in seconds
                 if (!/^\d+$/.test(time)) {

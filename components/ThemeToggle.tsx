@@ -16,7 +16,7 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
     if (!mounted) {
         return (
             <div className={`h-full aspect-square border-l-2 border-ct-primary flex items-center justify-center ${className}`}>
-                {/* Optional: Render non-interactive icon default or empty */}
+
             </div>
         );
     }
