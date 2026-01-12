@@ -4,6 +4,13 @@ export interface Contributor {
     html_url: string;
 }
 
+interface GitHubUser {
+    login: string;
+    avatar_url: string;
+    html_url: string;
+    type: string;
+}
+
 export async function getContributors(): Promise<Contributor[]> {
     try {
         const response = await fetch(
@@ -21,11 +28,11 @@ export async function getContributors(): Promise<Contributor[]> {
             return [];
         }
 
-        const contributors = await response.json();
+        const contributors = (await response.json()) as GitHubUser[];
 
         return contributors
-            .filter((user: any) => user.type !== 'Bot' && !user.login.endsWith('[bot]'))
-            .map((user: any) => ({
+            .filter((user) => user.type !== 'Bot' && !user.login.endsWith('[bot]'))
+            .map((user) => ({
                 login: user.login,
                 avatar_url: user.avatar_url,
                 html_url: user.html_url,
