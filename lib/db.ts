@@ -1,11 +1,11 @@
-import { items } from "@/app/data/items";
+import { tools } from "@/app/data/tools";
 
 export interface Link {
     title: string;
     url: string;
 }
 
-export interface Item {
+export interface Tool {
     name: string;
     description: string;
     image: string;
@@ -18,7 +18,7 @@ export interface Item {
 
 export interface Subcategory {
     name: string;
-    items: Item[];
+    tools: Tool[];
 }
 
 export interface Category {
@@ -26,22 +26,18 @@ export interface Category {
     subcategories: Subcategory[];
 }
 
-export interface ItemWithId extends Item {
-    id: number;
-}
-
-export async function getAllItems(): Promise<ItemWithId[]> {
-    // Return all items from the local file
-    return items.map(item => ({
-        ...item,
-        image: item.image || "",
+export async function getAllTools(): Promise<Tool[]> {
+    // Return all tools from the local file
+    return tools.map(tool => ({
+        ...tool,
+        image: tool.image || "",
     }));
 }
 
 export async function getFilters() {
-    const categories = Array.from(new Set(items.flatMap(i => i.categories))).sort();
-    const types = Array.from(new Set(items.map(i => i.type))).sort();
-    const stacks = Array.from(new Set(items.flatMap(i => i.stacks))).sort();
+    const categories = Array.from(new Set(tools.flatMap(t => t.categories))).sort();
+    const types = Array.from(new Set(tools.map(t => t.type))).sort();
+    const stacks = Array.from(new Set(tools.flatMap(t => t.stacks))).sort();
 
     return {
         categories,
