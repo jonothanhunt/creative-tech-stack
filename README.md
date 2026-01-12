@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎨 Creative Tech Stack
+# Creative Tech Stack
 
 **A curated collection of posts and tools for creative coders and technologists**
 
@@ -14,7 +14,7 @@
 
 ![Creative Tech Stack tools page screenshot](creative-tech-stack-git-hero.png)
 
-[**🌐 Visit Live Site**](https://creativetechstack.jonothan.dev/) • [**️ Browse Tools**](https://creativetechstack.jonothan.dev/tools)
+[**🌐 Visit Live Site**](https://creativetechstack.dev/) • [**️ Browse Tools**](https://creativetechstack.dev/tools)
 
 </div>
 
@@ -278,7 +278,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 💬 Get in Touch
 
-- **Website:** [creativetechstack.jonothan.dev](https://creativetechstack.jonothan.dev)
+- **Website:** [creativetechstack.dev](https://creativetechstack.dev)
 - **GitHub:** [@jonothanhunt](https://github.com/jonothanhunt)
 - **Issues:** [Report a bug or request a feature](https://github.com/jonothanhunt/creative-tech-stack/issues)
 
