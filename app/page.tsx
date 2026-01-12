@@ -9,20 +9,10 @@ import React from "react";
 
 const postsDirectory = path.join(process.cwd(), "posts");
 
-function formatDate(dateString: string): string {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    const postDate = new Date(dateString + "T00:00:00");
-    const diffDays = Math.floor(
-        (today.getTime() - postDate.getTime()) / (1000 * 60 * 60 * 24)
-    );
+import { formatDate } from "@/lib/utils";
 
-    if (diffDays === 0) return "TODAY";
-    if (diffDays === 1) return "1 DAY AGO";
-    if (diffDays <= 6) return `${diffDays} DAYS AGO`;
-    if (diffDays <= 13) return "LAST WEEK";
-    return dateString;
-}
+export const revalidate = 3600; // Revalidate every hour
+
 
 function getPosts() {
     const fileNames = fs.readdirSync(postsDirectory);

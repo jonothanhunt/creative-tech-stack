@@ -10,6 +10,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import Image from "next/image";
 import StickyHeader from "@/components/StickyHeader";
 import Footer from "@/components/Footer";
+import { formatDate } from "@/lib/utils";
 
 export default async function BlogPost({
     params,
@@ -27,20 +28,7 @@ export default async function BlogPost({
     const fileContents = fs.readFileSync(filePath, "utf8");
     const { content, data } = matter(fileContents);
 
-    function formatDate(dateString: string): string {
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
-        const postDate = new Date(dateString + "T00:00:00");
-        const diffDays = Math.floor(
-            (today.getTime() - postDate.getTime()) / (1000 * 60 * 60 * 24)
-        );
 
-        if (diffDays === 0) return "TODAY";
-        if (diffDays === 1) return "1 DAY AGO";
-        if (diffDays <= 6) return `${diffDays} DAYS AGO`;
-        if (diffDays <= 13) return "LAST WEEK";
-        return dateString;
-    }
 
     return (
         <div className="h-screen max-h-screen grid grid-cols-1 grid-rows-[auto_1fr] bg-ct-secondary">
