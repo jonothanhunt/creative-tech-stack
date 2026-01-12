@@ -11,7 +11,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com)
 [![MDX](https://img.shields.io/badge/MDX-3-1B1F24?style=flat-square&logo=mdx)](https://mdxjs.com)
 
-[**🌐 Visit Live Site**](https://creativetechstack.jonothan.dev/) • [**📝 Read the Blog**](https://creativetechstack.jonothan.dev/newsletter) • [**🛠️ Browse Tools**](https://creativetechstack.jonothan.dev/tools)
+[**🌐 Visit Live Site**](https://creativetechstack.jonothan.dev/) • [**️ Browse Tools**](https://creativetechstack.jonothan.dev/tools)
 
 </div>
 
@@ -55,7 +55,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the site running loca
 
 Tools are stored in a simple TypeScript file - no database needed!
 
-1. **Open** `app/data/tools.ts`
+1. **Open** [`app/data/tools.ts`](https://github.com/jonothanhunt/creative-tech-stack/blob/main/app/data/tools.ts)
 
 2. **Add your tool** to the `tools` array:
 
@@ -82,7 +82,7 @@ Tools are stored in a simple TypeScript file - no database needed!
 ```
 
 > [!TIP]
-> Look at existing tools in `tools.ts` for reference. Keep descriptions under 150 characters for best display.
+> Look at existing tools in [`tools.ts`](https://github.com/jonothanhunt/creative-tech-stack/blob/main/app/data/tools.ts) for reference. Keep descriptions under 150 characters for best display.
 
 3. **Add an image** (optional but recommended):
    - Place a high-quality screenshot or logo in `public/images/tools/`
@@ -121,6 +121,9 @@ Blog posts are written in **MDX** (Markdown + React components).
 ```bash
 posts/my-awesome-article.mdx
 ```
+
+> [!TIP]
+> Check out [this example blog post](https://github.com/jonothanhunt/creative-tech-stack/blob/main/posts/the-state-of-ai-avatars-digital-humans.mdx) to see the structure in action.
 
 2. **Add frontmatter** at the top:
 
