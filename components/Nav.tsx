@@ -46,13 +46,13 @@ export default function Nav() {
                 Newsletter
             </Link>
             <Link
-                href="/lists"
-                className={` flex-1 h-full py-2 px-2 font-instrument uppercase transition-[color,background-color] flex items-center justify-center ${pathname === "/lists"
+                href="/tools"
+                className={` flex-1 h-full py-2 px-2 font-instrument uppercase transition-[color,background-color] flex items-center justify-center ${pathname.startsWith("/tools")
                     ? "text-ct-secondary bg-ct-primary"
                     : "text-ct-primary"
                     } hover:text-ct-secondary hover:bg-ct-primary`}
             >
-                Lists
+                Tools
             </Link>
             <ThemeToggle className="hidden sm:flex" />
         </nav>

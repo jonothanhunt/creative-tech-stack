@@ -12,12 +12,15 @@ import StickyHeader from "@/components/StickyHeader";
 import Footer from "@/components/Footer";
 import { formatDate } from "@/lib/utils";
 
+import { getContributors } from "@/lib/contributors";
+
 export default async function BlogPost({
     params,
 }: {
     params: Promise<{ slug: string[] }>;
 }) {
     const { slug } = await params;
+    const contributors = await getContributors();
     const slugStr = slug.join("/");
     const filePath = path.join(process.cwd(), "posts", `${slugStr}.mdx`);
 
@@ -82,6 +85,7 @@ export default async function BlogPost({
                 <StickyHeader
                     title={data.title}
                     date={formatDate(data.date)}
+                    author={data.author}
                 />
 
 
@@ -93,7 +97,7 @@ export default async function BlogPost({
                         />
                     </div>
                 </article>
-                <Footer />
+                <Footer contributors={contributors} />
             </div>
         </div>
     );

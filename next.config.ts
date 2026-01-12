@@ -11,7 +11,8 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'placehold.co' },
       { protocol: 'https', hostname: 'www.google.com' },
-      { protocol: 'https', hostname: 'gks4b3xeraclzmtf.public.blob.vercel-storage.com' }
+      { protocol: 'https', hostname: 'gks4b3xeraclzmtf.public.blob.vercel-storage.com' },
+      { protocol: 'https', hostname: 'avatars.githubusercontent.com' }
     ]
   },
   /* config options here */

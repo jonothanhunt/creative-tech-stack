@@ -43,7 +43,7 @@ export default function FilterMenu({
     };
 
     return (
-        <div className={`overflow-hidden border-b-2 border-ct-primary ${className}`}>
+        <div className={`overflow-hidden border-b-[6px] border-ct-primary ${className}`}>
             <div className={`flex flex-row flex-wrap justify-center items-center text-3xl sm:text-3xl -ml-[2px] -mt-[2px] w-[calc(100%+2px)]`}>
                 {options.map((option) => {
                     const isSelected = selectedValues.includes(option);
@@ -71,9 +71,14 @@ export default function FilterMenu({
                                 className={`${baseClasses} border-l-2 border-t-2 border-r-0 border-b-0 border-ct-primary ${isSelected
                                     ? "text-ct-secondary bg-ct-primary"
                                     : "text-ct-primary"
-                                    } hover:text-ct-secondary hover:bg-ct-primary`}
+                                    } hover:text-ct-secondary hover:bg-ct-primary hover:!bg-none`}
+                                style={{
+                                    backgroundImage: isDimmed
+                                        ? "repeating-linear-gradient(-45deg, color-mix(in srgb, var(--ct-primary), transparent 50%) 0, color-mix(in srgb, var(--ct-primary), transparent 50%) 1px, transparent 1px, transparent 5px)"
+                                        : "none",
+                                }}
                             >
-                                <span className={isDimmed ? "opacity-60 group-hover:opacity-100 transition-opacity" : ""}>
+                                <span className={isDimmed ? "text-ct-primary/50 group-hover:text-ct-secondary transition-colors bg-ct-secondary px-2 group-hover:bg-transparent" : ""}>
                                     {option}
                                 </span>
                             </button>

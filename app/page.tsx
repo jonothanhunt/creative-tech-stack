@@ -29,13 +29,17 @@ function getPosts() {
             title: string;
             date: string;
             description: string;
+            author?: string;
         };
     });
     return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
 }
 
-export default function Home() {
+import { getContributors } from "@/lib/contributors";
+
+export default async function Home() {
     const posts = getPosts();
+    const contributors = await getContributors();
 
     return (
         <div className="bg-ct-secondary min-h-screen">
@@ -53,6 +57,11 @@ export default function Home() {
                             <article className=" hover:bg-ct-primary flex flex-col sm:flex-row sm:gap-6 justify-between text-3xl sm:text-4xl md:text-4xl border-b-2 py-2 px-2 transition-[padding,background-color] duration-1000 group-hover:duration-100 border-y-ct-primary divide-ct-primary divide">
                                 <h3 className="w-fit font-instrument transition-colors text-ct-primary group-hover:text-ct-secondary text-balance">
                                     {post.title}
+                                    {post.author && (
+                                        <span className="ml-3 opacity-50 font-normal text-2xl sm:text-3xl">
+                                            {post.author.split(" ")[0]}
+                                        </span>
+                                    )}
                                 </h3>
                                 <time className="font-instrument uppercase transition-colors text-ct-primary group-hover:text-ct-secondary">
                                     {formatDate(post.date)}
@@ -65,7 +74,7 @@ export default function Home() {
                     </div>
                 </div>
             </main>
-            <Footer />
+            <Footer contributors={contributors} />
         </div>
     );
 }

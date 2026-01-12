@@ -14,11 +14,11 @@ export default function Header() {
 
     const pathname = usePathname();
 
-    if (pathname === "/" || pathname === "/lists") {
+    if (pathname === "/" || pathname?.startsWith("/tools")) {
         return (
             <div className="bg-ct-secondary">
                 <header className="relative shadow-sm pt-10 pb-6 mix-blend-normal">
-                    <div className="z-10 absolute inset-0 opacity-40 md:opacity-100">
+                    <div className="z-10 absolute inset-0 opacity-50 md:opacity-100">
                         <HeaderCanvas />
                     </div>
                     <div className="flex flex-col ml-4">
