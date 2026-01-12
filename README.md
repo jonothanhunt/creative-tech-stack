@@ -2,7 +2,7 @@
 
 # Creative Tech Stack
 
-**A curated collection of posts and tools for creative coders and technologists**
+A curated collection of posts and tools for creative coders and technologists.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=flat-square&logo=next.js)](https://nextjs.org)
@@ -14,22 +14,22 @@
 
 ![Creative Tech Stack tools page screenshot](creative-tech-stack-git-hero.png)
 
-[**🌐 Visit Live Site**](https://creativetechstack.dev/) • [**️ Browse Tools**](https://creativetechstack.dev/tools)
+[**Visit live site**](https://creativetechstack.dev/) • [**Browse tools**](https://creativetechstack.dev/tools)
 
 </div>
 
 ---
 
-## 🤝 Creative Tech Stack is Open Source
+## Contributing
 
-Whether you're just starting out or an experienced technologist, please add a post or tool to the stack (or even improve the codebase)! Here's how:
+Whether you're just starting out or you've been doing this for years, contributions are welcome. Add a tool, write a post, or improve the codebase.
 
-### 🚀 Getting Started
+### Getting started
 
 #### Prerequisites
 
-- **Node.js** 18+ or **pnpm** 10+
-- **Git**
+- Node.js 18+ or pnpm 10+
+- Git
 
 #### Installation
 
@@ -49,23 +49,23 @@ npm run dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to see the site running locally! 🎉
+Open [http://localhost:3000](http://localhost:3000) and you're good to go.
 
 ---
 
 <details>
-<summary><strong>🛠️ Adding a Tool</strong></summary>
+<summary><strong>Adding a tool</strong></summary>
 
-Tools are stored in a simple TypeScript file - no database needed!
+Tools live in a TypeScript file. No database needed.
 
-1. **Open** [`app/data/tools.ts`](https://github.com/jonothanhunt/creative-tech-stack/blob/main/app/data/tools.ts)
+1. Open [`app/data/tools.ts`](https://github.com/jonothanhunt/creative-tech-stack/blob/main/app/data/tools.ts)
 
-2. **Add your tool** to the `tools` array:
+2. Add your tool to the `tools` array:
 
 ```typescript
 {
     "name": "Your Amazing Tool",
-    "description": "A concise description of what it does and why it's awesome.",
+    "description": "What it does and why it matters.",
     "image": "/images/tools/your-tool.png", // Add your image to public/images/tools/
     "type": "Tool", // Options: Tool, Library, Platform, Framework, Engine, API, etc.
     "categories": ["Creative Coding", "Real-time 3D"], // Pick from existing categories
@@ -84,51 +84,49 @@ Tools are stored in a simple TypeScript file - no database needed!
 }
 ```
 
-> [!TIP]
-> Look at existing tools in [`tools.ts`](https://github.com/jonothanhunt/creative-tech-stack/blob/main/app/data/tools.ts) for reference. Keep descriptions under 150 characters for best display.
+**Tip:** Check existing tools in [`tools.ts`](https://github.com/jonothanhunt/creative-tech-stack/blob/main/app/data/tools.ts) for reference. Keep descriptions under 150 characters.
 
-3. **Add an image** (optional but recommended):
-   - Place a high-quality screenshot or logo in `public/images/tools/`
+3. Add an image (optional but recommended):
+   - Place a screenshot or logo in `public/images/tools/`
    - Name it using kebab-case: `your-tool-name.png`
    - Recommended size: 1200x900px (4:3 aspect ratio)
 
-4. **Submit a Pull Request:**
+4. Submit a pull request:
 
 ```bash
 # Fork the repository on GitHub, then clone your fork
 git clone https://github.com/YOUR-USERNAME/creative-tech-stack.git
 cd creative-tech-stack
 
-# Create a new branch for your changes
+# Create a new branch
 git checkout -b add-your-tool-name
 
 # Make your changes, then commit
 git add .
-git commit -m "Add Your Tool Name to tools list"
+git commit -m "Add Your Tool Name"
 
 # Push to your fork
 git push origin add-your-tool-name
 ```
 
-Then open a pull request on GitHub from your fork to the main repository.
+Then open a pull request from your fork to the main repository.
 
 </details>
 
 <details>
-<summary><strong>✍️ Writing a Blog Post</strong></summary>
+<summary><strong>Writing a blog post</strong></summary>
 
-Blog posts are written in **MDX** (Markdown + React components).
+Posts are written in MDX (Markdown + React components).
 
-1. **Create a new file** in `posts/`:
+1. Create a new file in `posts/`:
 
 ```bash
 posts/my-awesome-article.mdx
 ```
 
-> [!TIP]
-> Check out [this example blog post](https://github.com/jonothanhunt/creative-tech-stack/blob/main/posts/the-state-of-ai-avatars-digital-humans.mdx) to see the structure in action.
+**Tip:** Check out [this example post](https://github.com/jonothanhunt/creative-tech-stack/blob/main/posts/the-state-of-ai-avatars-digital-humans.mdx) to see how it works.
 
-2. **Add frontmatter** at the top:
+2. Add frontmatter at the top:
 
 ```yaml
 ---
@@ -140,19 +138,19 @@ author: "Your Name"
 ---
 ```
 
-3. **Write your content** using Markdown:
+3. Write your content using Markdown:
 
 ```markdown
 ## Introduction
 
-Your amazing content here...
+Your content here...
 
 ### Subheading
 
-More great insights...
+More insights...
 ```
 
-4. **Use custom components** (optional):
+4. Use custom components (optional):
 
 ```jsx
 <YouTubeEmbed url="https://youtube.com/watch?v=..." />
@@ -161,27 +159,24 @@ More great insights...
 
 <LinkedInEmbed url="https://linkedin.com/embed/..." />
 
-<InfoBlock>
-💡 **Pro Tip:** This is a highlighted info block!
-</InfoBlock>
+> 💡 **Pro Tip:** You can also use simple blockquote syntax for info blocks!
 ```
 
-5. **Add images** for your post:
+5. Add images for your post:
    - Create a folder: `public/images/posts/my-awesome-article/`
    - Add your images there
    - Reference them: `![Alt text](/images/posts/my-awesome-article/image.png)`
 
-6. **Submit a Pull Request**
+6. Submit a pull request
 
-> [!NOTE]
-> MDX allows you to use React components directly in your Markdown. See the [MDX documentation](https://mdxjs.com) for more advanced usage.
+**Note:** MDX lets you use React components directly in Markdown. See the [MDX docs](https://mdxjs.com) for more.
 
 <details>
-<summary><strong>🔧 Advanced: Adding New MDX Components</strong></summary>
+<summary><strong>Advanced: adding new MDX components</strong></summary>
 
-If you want to create a new reusable component for blog posts:
+Want to create a new reusable component for posts?
 
-1. **Create the component** in `components/`:
+1. Create the component in `components/`:
 
 ```tsx
 // components/MyCustomComponent.tsx
@@ -194,7 +189,7 @@ export default function MyCustomComponent({ children }: { children: React.ReactN
 }
 ```
 
-2. **Export it** from `mdx-components.tsx`:
+2. Export it from `mdx-components.tsx`:
 
 ```tsx
 import MyCustomComponent from '@/components/MyCustomComponent';
@@ -207,7 +202,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 }
 ```
 
-3. **Use it** in any MDX file:
+3. Use it in any MDX file:
 
 ```jsx
 <MyCustomComponent>
@@ -221,7 +216,7 @@ Your content here
 
 ---
 
-## 📁 Project Structure
+## Project structure
 
 ```
 creative-tech-stack/
@@ -247,7 +242,7 @@ creative-tech-stack/
 
 ---
 
-## 🛠️ Tech Stack
+## Tech stack
 
 - **Framework:** [Next.js 15](https://nextjs.org) with App Router
 - **Language:** [TypeScript 5](https://www.typescriptlang.org)
@@ -260,32 +255,23 @@ creative-tech-stack/
 
 ---
 
-## 📝 Available Scripts
+## Scripts
 
 ```bash
-# Development
 npm run dev          # Start dev server with Turbopack
 npm run build        # Build for production
 npm run start        # Start production server
 npm run lint         # Run ESLint
 ```
 
-## 📄 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 💬 Get in Touch
+## Get in touch
 
 - **Website:** [creativetechstack.dev](https://creativetechstack.dev)
 - **GitHub:** [@jonothanhunt](https://github.com/jonothanhunt)
 - **Issues:** [Report a bug or request a feature](https://github.com/jonothanhunt/creative-tech-stack/issues)
-
----
-
-<div align="center">
-
-[⬆ Back to Top](#-creative-tech-stack)
-
-</div>
