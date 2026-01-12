@@ -138,6 +138,7 @@ export const tools: Tool[] = [
         "description": "A flexible software sketchbook and a language for learning how to code within the context of the visual arts.",
         "image": "/images/tools/processing.webp",
         "type": "Platform",
+        "featured": true,
         "isOpenSource": true,
         "categories": [
             "Creative Coding"
@@ -159,6 +160,7 @@ export const tools: Tool[] = [
         "description": "Cross-browser interactive tool for creating and sharing shaders in WebGL, a playground for computer graphics enthusiasts.",
         "image": "/images/tools/shadertoy.webp",
         "type": "Resource",
+        "featured": true,
         "categories": [
             "Creative Coding",
             "Real-time 3D"
@@ -219,6 +221,7 @@ export const tools: Tool[] = [
         "description": "The AI community building the future. The hub for open-source models, datasets, and collaborative machine learning.",
         "image": "/images/tools/hugging-face.webp",
         "type": "Platform",
+        "featured": true,
         "categories": [
             "AI & Generative",
             "Web Ecosystem"
@@ -235,26 +238,26 @@ export const tools: Tool[] = [
             }
         ]
     },
-    {
-        "name": "OpenAI API",
-        "description": "Access to powerful AI models like GPT-4 and DALL-E for integration into applications and creative tools.",
-        "image": "/images/tools/openai-api.webp",
-        "type": "API",
-        "categories": [
-            "AI & Generative"
-        ],
-        "stacks": [
-            "LLM",
-            "API",
-            "GenAI"
-        ],
-        "links": [
-            {
-                "title": "Docs",
-                "url": "https://platform.openai.com"
-            }
-        ]
-    },
+    // {
+    //     "name": "OpenAI API",
+    //     "description": "Access to powerful AI models like GPT-4 and DALL-E for integration into applications and creative tools.",
+    //     "image": "/images/tools/openai-api.webp",
+    //     "type": "API",
+    //     "categories": [
+    //         "AI & Generative"
+    //     ],
+    //     "stacks": [
+    //         "LLM",
+    //         "API",
+    //         "GenAI"
+    //     ],
+    //     "links": [
+    //         {
+    //             "title": "Docs",
+    //             "url": "https://platform.openai.com"
+    //         }
+    //     ]
+    // },
     {
         "name": "8th Wall",
         "description": "EDIT: Is closing down as is! A powerful platform for building WebAR content that works across iOS and Android without an app.",
@@ -331,7 +334,6 @@ export const tools: Tool[] = [
             "Interactive",
             "Runtime"
         ],
-        "featured": true,
         "links": [
             {
                 "title": "Website",
@@ -363,6 +365,7 @@ export const tools: Tool[] = [
         "description": "The free and open source 3D creation suite. It supports the entirety of the 3D pipeline.",
         "image": "/images/tools/blender.webp",
         "type": "Tool",
+        "featured": true,
         "isOpenSource": true,
         "categories": [
             "Design & Motion",
@@ -405,6 +408,7 @@ export const tools: Tool[] = [
         "description": "A series of small single-board computers perfect for IoT projects, media centers, and learning computing.",
         "image": "/images/tools/raspberry-pi.webp",
         "type": "Hardware",
+        "featured": true,
         "categories": [
             "Physical Computing"
         ],
@@ -425,6 +429,7 @@ export const tools: Tool[] = [
         "description": "The React Framework for the Web, offering hybrid static & server rendering, and smart bundling.",
         "image": "/images/tools/nextjs.webp",
         "type": "Framework",
+        "featured": true,
         "isOpenSource": true,
         "categories": [
             "Web Ecosystem"
@@ -719,6 +724,7 @@ export const tools: Tool[] = [
         "description": "A wildly robust JavaScript animation library for the modern web.",
         "image": "/images/tools/gsap.webp",
         "type": "Library",
+        "featured": true,
         "categories": [
             "Web Ecosystem",
             "Design & Motion"
@@ -758,6 +764,7 @@ export const tools: Tool[] = [
         "description": "Instant cloud development environment for building and sharing web projects.",
         "image": "/images/tools/codesandbox.webp",
         "type": "Platform",
+        "featured": true,
         "categories": [
             "Web Ecosystem"
         ],
@@ -797,6 +804,7 @@ export const tools: Tool[] = [
         "description": "A high-performance code editor built for speed and collaborative coding.",
         "image": "/images/tools/zed.webp",
         "type": "Software",
+        "featured": true,
         "isOpenSource": true,
         "categories": [
             "Web Ecosystem"
@@ -906,7 +914,6 @@ export const tools: Tool[] = [
             "UI/UX",
             "React"
         ],
-        "featured": true,
         "links": [
             {
                 "title": "Website",
@@ -940,6 +947,7 @@ export const tools: Tool[] = [
         "description": "A powerful agentic AI coding assistant designed by the Google Deepmind team.",
         "image": "/images/tools/google-antigravity.webp",
         "type": "Tool",
+        "featured": true,
         "categories": [
             "AI & Generative",
             "Web Ecosystem"
@@ -1165,10 +1173,12 @@ export const tools: Tool[] = [
         "description": "The world's most open and advanced real-time 3D creation tool for photoreal visuals and immersive experiences.",
         "image": "/images/tools/unreal-engine.webp",
         "type": "Engine",
+        "featured": true,
         "categories": [
             "Game Engine",
             "Real-time 3D",
-            "Extended Reality (XR)"
+            "Extended Reality (XR)",
+            "Virtual Production"
         ],
         "stacks": [
             "C++",
@@ -1208,6 +1218,7 @@ export const tools: Tool[] = [
         "description": "A feature-packed, completely free and open-source game engine for 2D and 3D games.",
         "image": "/images/tools/godot.webp",
         "type": "Engine",
+        "featured": true,
         "isOpenSource": true,
         "categories": [
             "Game Engine",
@@ -1230,6 +1241,7 @@ export const tools: Tool[] = [
         "description": "A Web-first game engine. Build lightweight, beautiful 3D games and apps for the mobile and desktop web.",
         "image": "/images/tools/playcanvas.webp",
         "type": "Engine",
+        "featured": true,
         "categories": [
             "Game Engine",
             "Web Ecosystem",
@@ -1244,6 +1256,28 @@ export const tools: Tool[] = [
             {
                 "title": "Website",
                 "url": "https://playcanvas.com"
+            }
+        ]
+    },
+    {
+        "name": "Motion",
+        "description": "A production-ready motion library for React.",
+        "image": "/images/tools/motion.webp",
+        "type": "Library",
+        "featured": true,
+        "isOpenSource": true,
+        "categories": [
+            "Design & Motion",
+            "Web Ecosystem"
+        ],
+        "stacks": [
+            "Animation",
+            "React"
+        ],
+        "links": [
+            {
+                "title": "Website",
+                "url": "https://motion.dev/"
             }
         ]
     }
