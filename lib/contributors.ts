@@ -23,11 +23,13 @@ export async function getContributors(): Promise<Contributor[]> {
 
         const contributors = await response.json();
 
-        return contributors.map((user: any) => ({
-            login: user.login,
-            avatar_url: user.avatar_url,
-            html_url: user.html_url,
-        }));
+        return contributors
+            .filter((user: any) => user.type !== 'Bot' && !user.login.endsWith('[bot]'))
+            .map((user: any) => ({
+                login: user.login,
+                avatar_url: user.avatar_url,
+                html_url: user.html_url,
+            }));
     } catch (error) {
         console.error("Error fetching contributors:", error);
         return [];
