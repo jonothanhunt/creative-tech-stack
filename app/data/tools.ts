@@ -25,7 +25,7 @@ export const tools: Tool[] = [
     {
         "name": "React Three Fiber",
         "description": "A React renderer for Three.js, bringing declarative, component-based 3D development to the React ecosystem.",
-        "image": "/images/tools/react-three-fiber.png",
+        "image": "/images/tools/react-three-fiber.jpg",
         "type": "Library",
         "categories": [
             "Real-time 3D",
