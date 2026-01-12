@@ -43,7 +43,7 @@ export default function RootLayout({
             <body
                 className={`${atkinson.className} ${lastik.variable} ${instrumentSerif.variable}  font-sans antialiased m-0 p-0`}
             >
-                <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+                <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
                     <Header />
                     {children}
                 </ThemeProvider>

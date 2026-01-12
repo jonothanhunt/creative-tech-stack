@@ -11,6 +11,8 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com)
 [![MDX](https://img.shields.io/badge/MDX-3-1B1F24?style=flat-square&logo=mdx)](https://mdxjs.com)
 
+
+![Creative Tech Stack Hero](creative-tech-stack-git-hero.png)
 [**🌐 Visit Live Site**](https://creativetechstack.jonothan.dev/) • [**️ Browse Tools**](https://creativetechstack.jonothan.dev/tools)
 
 </div>
@@ -266,16 +268,6 @@ npm run build        # Build for production
 npm run start        # Start production server
 npm run lint         # Run ESLint
 ```
-
----
-
-## 🌟 Contributors
-
-Thank you to all our amazing contributors! 💖
-
-<!-- Contributors are dynamically pulled from GitHub and displayed in the footer -->
-
----
 
 ## 📄 License
 

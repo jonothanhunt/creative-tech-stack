@@ -12,15 +12,17 @@
 
 /* Light Mode (flipped: Dark Text, Light BG) */
 :root {
+    --ct-primary: rgb(16, 0, 55);
+    --ct-secondary: rgb(255, 237, 163);
 
-    --ct-primary: rgb(255, 237, 163);
-    --ct-secondary: rgb(16, 0, 55);
 }
 
 /* Dark Mode (original: Light Text, Dark BG) */
 .dark {
-    --ct-primary: rgb(16, 0, 55);
-    --ct-secondary: rgb(255, 237, 163);
+
+
+    --ct-primary: rgb(255, 237, 163);
+    --ct-secondary: rgb(16, 0, 55);
 }
 
 body {
