@@ -7,7 +7,7 @@ export interface Contributor {
 export async function getContributors(): Promise<Contributor[]> {
     try {
         const response = await fetch(
-            "https://api.github.com/repos/jonothanhunt/creative-tech-stack/commits",
+            "https://api.github.com/repos/jonothanhunt/creative-tech-stack/contributors?per_page=100",
             {
                 next: { revalidate: 3600 },
                 headers: {
@@ -21,22 +21,13 @@ export async function getContributors(): Promise<Contributor[]> {
             return [];
         }
 
-        const commits = await response.json();
+        const contributors = await response.json();
 
-        // Extract unique authors
-        const contributorsMap = new Map<string, Contributor>();
-
-        for (const commit of commits) {
-            if (commit.author) {
-                contributorsMap.set(commit.author.login, {
-                    login: commit.author.login,
-                    avatar_url: commit.author.avatar_url,
-                    html_url: commit.author.html_url,
-                });
-            }
-        }
-
-        return Array.from(contributorsMap.values());
+        return contributors.map((user: any) => ({
+            login: user.login,
+            avatar_url: user.avatar_url,
+            html_url: user.html_url,
+        }));
     } catch (error) {
         console.error("Error fetching contributors:", error);
         return [];
