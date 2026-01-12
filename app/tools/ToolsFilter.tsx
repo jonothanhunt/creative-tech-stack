@@ -8,6 +8,7 @@ import FilterMenu from "@/components/FilterMenu";
 import Nav from "@/components/Nav";
 import { TfiArrowUp, TfiArrowDown } from "react-icons/tfi";
 import { IoMdGitBranch } from "react-icons/io";
+import { PiMedalThin } from "react-icons/pi";
 import Footer from "@/components/Footer";
 
 import { Contributor } from "@/lib/contributors";
@@ -194,11 +195,26 @@ export default function ToolsFilter({
 
             <div className="overflow-hidden">
                 {!tools.length ? null : (
-                    <div className="flex flex-wrap -ml-[2px] -mt-[2px] w-[calc(100%+2px)]">
+                    <div className="grid grid-cols-[repeat(auto-fill,minmax(350px,1fr))] gap-[2px] bg-ct-primary border-b-2 border-ct-primary">
+                        {(!selectedCategory && !selectedType && selectedStacks.length === 0) && (
+                            <div className="group w-full h-full bg-ct-secondary flex flex-col">
+                                <div className="flex flex-col h-auto min-[702px]:h-full bg-ct-secondary px-8 pt-8 pb-8 box-border items-center text-center min-[702px]:items-start min-[702px]:text-left">
+                                    <h3 className="text-6xl font-lastik font-[50] mb-2 text-ct-primary leading-[1.1]">
+                                        Showing featured
+                                    </h3>
+                                    <p className="text-xl font-instrument mb-0 min-[702px]:mb-8 text-ct-primary">
+                                        Use filters above to find more tools
+                                    </p>
+                                    <div className="hidden min-[702px]:block mt-auto text-8xl text-ct-primary -ml-[1.3rem]">
+                                        <PiMedalThin />
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                         {filteredTools.map((tool) => (
                             <div
                                 key={tool.name}
-                                className="group w-full min-w-0 md:w-1/2 lg:w-1/3 xl:w-1/4 2xl:w-1/5 border-t-0 border-b-2 border-ct-primary cursor-pointer flex flex-col border-l-2 border-r-0 md:odd:border-r-2 md:even:border-l-0 lg:[&:nth-child(3n+1)]:border-l-2 lg:[&:nth-child(3n+1)]:border-r-2 lg:[&:nth-child(3n+2)]:border-l-0 lg:[&:nth-child(3n+2)]:border-r-2 lg:[&:nth-child(3n)]:border-l-0 lg:[&:nth-child(3n)]:border-r-0 xl:[&:nth-child(4n+1)]:border-l-2 xl:[&:nth-child(4n+1)]:border-r-2 xl:[&:nth-child(4n+2)]:border-l-0 xl:[&:nth-child(4n+2)]:border-r-2 xl:[&:nth-child(4n+3)]:border-l-0 xl:[&:nth-child(4n+3)]:border-r-2 xl:[&:nth-child(4n)]:border-l-0 xl:[&:nth-child(4n)]:border-r-0 2xl:[&:nth-child(5n+1)]:border-l-2 2xl:[&:nth-child(5n+1)]:border-r-2 2xl:[&:nth-child(5n+2)]:border-l-0 2xl:[&:nth-child(5n+2)]:border-r-2 2xl:[&:nth-child(5n+3)]:border-l-0 2xl:[&:nth-child(5n+3)]:border-r-2 2xl:[&:nth-child(5n+4)]:border-l-0 2xl:[&:nth-child(5n+4)]:border-r-2 2xl:[&:nth-child(5n)]:border-l-0 2xl:[&:nth-child(5n)]:border-r-0"
+                                className="group w-full cursor-pointer flex flex-col bg-ct-secondary"
                                 onClick={() =>
                                     window.open(tool.links[0].url, "_blank")
                                 }
