@@ -12,7 +12,8 @@
 [![MDX](https://img.shields.io/badge/MDX-3-1B1F24?style=flat-square&logo=mdx)](https://mdxjs.com)
 
 
-![Creative Tech Stack Hero](creative-tech-stack-git-hero.png)
+![Creative Tech Stack tools page screenshot](creative-tech-stack-git-hero.png)
+
 [**🌐 Visit Live Site**](https://creativetechstack.jonothan.dev/) • [**️ Browse Tools**](https://creativetechstack.jonothan.dev/tools)
 
 </div>
