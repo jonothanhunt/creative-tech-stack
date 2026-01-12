@@ -78,7 +78,7 @@ export default function FilterMenu({
                                         : "none",
                                 }}
                             >
-                                <span className={isDimmed ? "text-ct-primary/50 group-hover:text-ct-secondary transition-colors bg-ct-secondary px-2 group-hover:bg-transparent" : ""}>
+                                <span className={isDimmed ? "text-ct-primary/50 group-hover:text-ct-secondary transition-colors relative z-0 before:absolute before:-inset-x-1 before:inset-y-1 before:bg-ct-secondary before:-z-10 group-hover:before:hidden" : ""}>
                                     {option}
                                 </span>
                             </button>

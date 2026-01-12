@@ -14,6 +14,7 @@ export interface Tool {
     categories: string[];
     stacks: string[];
     featured?: boolean;
+    isOpenSource?: boolean;
 }
 
 export interface Subcategory {

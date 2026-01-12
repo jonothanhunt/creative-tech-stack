@@ -7,6 +7,7 @@ import Image from "next/image";
 import FilterMenu from "@/components/FilterMenu";
 import Nav from "@/components/Nav";
 import { TfiArrowUp, TfiArrowDown } from "react-icons/tfi";
+import { IoMdGitBranch } from "react-icons/io";
 import Footer from "@/components/Footer";
 
 import { Contributor } from "@/lib/contributors";
@@ -202,14 +203,15 @@ export default function ToolsFilter({
                                     window.open(tool.links[0].url, "_blank")
                                 }
                             >
-                                <div className="relative w-full aspect-[4/3] bg-gradient-to-br from-[#FFB31B] via-[#FF32D9] to-[#2B0BFF]">
+                                <div className="relative w-full h-72 bg-gradient-to-br from-[#FFB31B] via-[#FF32D9] to-[#2B0BFF]">
                                     {tool.image && (
                                         <Image
                                             src={tool.image}
                                             alt={tool.name}
                                             fill
+                                            className="p-6"
                                             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                            style={{ objectFit: 'cover' }}
+                                            style={{ objectFit: 'contain' }}
                                         />
                                     )}
                                 </div>
@@ -220,7 +222,15 @@ export default function ToolsFilter({
                                         <h3 className="text-2xl font-lastik font-[50] mb-2 text-balance">
                                             {tool.name}
                                         </h3>
-                                        <p className="">{tool.description}</p>
+                                        <p className="">
+                                            {tool.description}
+                                            {tool.isOpenSource && (
+                                                <span className="inline-flex items-center gap-1 text-sm font-sans ml-2 translate-y-[2px] whitespace-nowrap">
+                                                    <IoMdGitBranch />
+                                                    <span>Open source</span>
+                                                </span>
+                                            )}
+                                        </p>
                                     </div>
                                     <div className="flex text-xl flex-wrap border-t-2 border-ct-primary">
                                         {tool.links.map((link, index) => {
