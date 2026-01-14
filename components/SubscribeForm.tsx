@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { TfiArrowRight, TfiCheck } from "react-icons/tfi";
+import { track } from "@vercel/analytics/react";
 import { subscribe } from "@/app/actions/subscribe";
 
 export default function SubscribeForm() {
@@ -18,6 +19,7 @@ export default function SubscribeForm() {
         const result = await subscribe(formData);
 
         if (result.success) {
+            track("signup");
             setStatus("success");
         } else {
             console.error(result.error);

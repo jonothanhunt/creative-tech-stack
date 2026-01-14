@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 import { Atkinson_Hyperlegible, Instrument_Serif } from "next/font/google";
 import localFont from "next/font/local";
@@ -46,6 +47,7 @@ export default function RootLayout({
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
                     <Header />
                     {children}
+                    <Analytics />
                 </ThemeProvider>
             </body>
         </html>
