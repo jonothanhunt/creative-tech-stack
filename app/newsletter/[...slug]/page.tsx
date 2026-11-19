@@ -39,7 +39,7 @@ export default async function BlogPost({
     }
 
     return (
-        <div className="h-screen max-h-screen grid grid-cols-1 grid-rows-[auto_1fr]">
+        <div className="h-screen max-h-screen grid grid-cols-1 grid-rows-[auto_1fr] bg-black">
             <header className="mix-blend-normal">
                 <Link
                     href="/"

@@ -45,11 +45,11 @@ export default function Home() {
     const posts = getPosts();
 
     return (
-        <div className="">
+        <div className="bg-black min-h-screen">
             <div className="sticky top-0 mix-blend-normal">
                 <Nav />
             </div>
-            <main className="w-full ">
+            <main className="w-full">
                 <div className="">
                     {posts.map((post) => (
                         <Link

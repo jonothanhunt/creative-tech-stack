@@ -129,7 +129,7 @@ export default function ListsPage() {
     const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
     return (
-        <div className="bg-black">
+        <div className="bg-black min-h-screen">
             {/* Top level filter */}
             <div
                 ref={stickyRef}
@@ -187,9 +187,7 @@ export default function ListsPage() {
             </div>
             {/* Content */}
             <div className="">
-                {!items.length && loading ? (
-                    <div className="p-4 text-ct-primary">Loading...</div>
-                ) : (
+                {!items.length && loading ? null : (
                     <div className="flex flex-wrap">
                         {filteredItems.map((item) => (
                             <div
