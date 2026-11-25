@@ -361,6 +361,25 @@ export const tools: Tool[] = [
         ]
     },
     {
+        "name": "Kite",
+        "description": "Collaborative design tool where AI agents draw editable layers via MCP; copy any frame as HTML, React or Tailwind.",
+        "image": "/images/tools/kite.webp",
+        "type": "Tool",
+        "categories": [
+            "Design & Motion"
+        ],
+        "stacks": [
+            "UI/UX",
+            "Prototyping"
+        ],
+        "links": [
+            {
+                "title": "Website",
+                "url": "https://kite.new"
+            }
+        ]
+    },
+    {
         "name": "Blender",
         "description": "The free and open source 3D creation suite. It supports the entirety of the 3D pipeline.",
         "image": "/images/tools/blender.webp",
